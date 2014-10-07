@@ -2,7 +2,7 @@
 title: Max Lever
 email: maxlever@ccs.neu.edu
 description: > # this means to ignore newlines until "baseurl:"
-  Hi! I'm Max, a UX designer/developer studying Computer Science and 
+  Hi! I'm Max, a Web developer studying Computer Science and 
   Interactive Media at Northeastern University.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://maxlever.me" # the base hostname & protocol for your site
