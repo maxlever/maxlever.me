@@ -6,6 +6,7 @@ layout: default
 <h1 class="page-heading">Work<span style="float:right;"><a href="/web" class="label label-info web">Web</a>  <a href="/games" class="label label-warning games">Games</a> <a href="/art+design" class="label label-success artdesign">Art+Design</a></span></h1>
   <div class="row">
     {% for post in site.posts %}
+    
 <style type="text/css">
                   .{{ post.title | replace:' ',''}}:hover:before {
 
@@ -23,7 +24,13 @@ background: url({{ "/images/" | append:post.title | replace:' ','' | append:'1lo
 
     {% endfor %}
 
-            
+            <style type="text/css">
+      .BlackandWhiteparent {
+        background-size: 200% !important;
+        background-position: 0% 50% !important;
+      }
+    </style>
+
   </div>
 </div>
   <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
