@@ -39,11 +39,6 @@ ul, ol, dl, figure,
 /**
  * Images
  */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
 
 
 /**
@@ -99,10 +94,6 @@ a {
         color: $text-color;
         text-decoration: underline;
     }
-}
-
-header .site-title {
-    font-family: 'Montserrat', inherit;
 }
 
 /**
