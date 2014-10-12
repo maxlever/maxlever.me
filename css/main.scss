@@ -14,7 +14,7 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #f9f9ea;
+$background-color: #f9f9ea; // #3E606F;
 $brand-color:      #d3b868;
 
 $grey-color:       #828282;
@@ -117,7 +117,7 @@ a.label-default:hover {
     background-image: none;
 }
 header .site-title {
-    font-family: 'Montserrat', inherit;
+    font-family: inherit;
 }
 video {
   width: 100%    !important;
