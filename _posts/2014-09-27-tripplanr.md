@@ -22,4 +22,4 @@ The code can be found online on <a href="http://github.com/dvdhsu/tripplanr">git
 </p></div>
 </div>
 <br>
-  <p><a style="float:left;" href="{{ site.baseurl }}/web/inshore">&#8592; Previous Project</a><a style="float:right;" href="{{ site.baseurl }}/games/hext">Next Project &#8594;</a></p>
+  <p><a style="float:left;" href="{{ site.baseurl }}/web/inshore">&#8592; Previous</a><a style="float:right;" href="{{ site.baseurl }}/games/hext">Next &#8594;</a></p>
