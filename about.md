@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I'm a Boston-based web developer and student at Northeastern University. I'm studying Computer Science and Interactive Media, a combination of UX and programming, my two greatest passions.
+I'm a French-American web developer and designer studying Computer Science & Interactive Media at Northeastern University. I'm very interested in the intersection of art, design and technology.
 
-In my spare time, I listen to the Black Keys, play blues guitar, and go to hackathons.
+In my spare time, I eat baguettes, read existentialist essays, play blues guitar, and go to hackathons.
