@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "Matisia"
+date:   2015-04-16 16:50:11
+categories: dev
+datedisp: April 2015
+permalink: dev/matisia/
+---
+<img class="post_img_soft" src="/images/matisia_home-desktop.png">
+<br><br>
+<p>
+    While on co-op at <a href="http://ronikdesign.com">Ronik</a>, I worked on a team to develop a single-page static marketing website for <a href="http://www.matisia.com/">Matisia</a>, a Seattle-based business strategy and management consulting firm. We developed a fixed-width desktop and a mobile version. This was one of the most challenging front-end projects I had at Ronik because the website featured a looping background video, dozens of individual videos, scrolling animations, and atypical layouts.
+</p>
+<p>
+    Each section of the site has a different background video loop. Instead of loading as many videos as there are sections, we combined all sections into a single video. I set up the background video with Ronik's <a href="https://github.com/ronik-design/drive-in">Drive-in</a> video library, and used Waypoints to skip to and loop through different sections of the video depending on what section the user is in.
+</p>
+<p>
+    For individual videos, I used HTML5 Video tags and created custom video controls, buffers, and spinners. For performance reasons, I made it so that a video only starts loading once it is clicked on, and all other videos are unloaded when a video is played.
+</p>
+<p>
+    I also used <a href="https://github.com/imakewebthings/waypoints">Waypoints</a> for navigation, and delayed the loading of images and video previews not within view using <a href="https://github.com/tuupola/jquery_lazyload">Lazyload</a>.
+</p>
+<p>
+    Finally, I integrated <a href="https://github.com/pukhalski/tap">Tap.JS</a> to allow for seamless mobile interaction.
+</p>
+<img class="post_img_soft" src="/images/matisia_consultants.png">
+<br><br>
+<div class="row">
+    <div class="col-sm-4">
+        <img class="post_img_soft" src="/images/matisia_home-mobile.png">
+    </div>
+    <div class="col-sm-4">
+        <img class="post_img_soft" src="/images/matisia_consultants-mobile.png">
+    </div>
+    <div class="col-sm-4">
+        <img class="post_img_soft" src="/images/matisia_news-mobile.png">
+    </div>
+</div>
+<br><br>
+<p>
+<a style="float:left;" href="{{ site.baseurl }}/art+design/ronik">&#8592; Previous</a>
+<a style="float:right;" href="{{ site.baseurl }}/dev/human-ventures">Next &#8594;</a>
+</p>
