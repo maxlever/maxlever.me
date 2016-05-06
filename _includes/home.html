@@ -3,21 +3,16 @@
   <h1 class="page-heading">
     {{ include.titl }}
     <span style="float:right;">
-    <a href="/" class="label label-default all">All</a>
-      {% if include.cat == 'dev' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
-      {% if include.cat == 'artdesign' %} <a href="/dev" class="label label-info dev">Development</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
-      {% if include.cat == 'games' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/dev" class="label label-info dev">Development</a> {% endif %}
+        <small>Filter:&nbsp;&nbsp;</small>
+        <a href="/" class="label label-default all">All</a>
+        {% if include.cat == 'dev' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
+        {% if include.cat == 'artdesign' %} <a href="/dev" class="label label-info dev">Development</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
+        {% if include.cat == 'games' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/dev" class="label label-info dev">Development</a> {% endif %}
     </span>
   </h1>
   <div class="row">
     {% for post in site.posts %}
     {% if post.categories contains include.cat %}
-<style type="text/css">
-                  .{{ post.title | replace:' ',''}}:hover:before {
-
-                    content: "{{ post.title }}";
-              }
-            </style>
     <div class="col-sm-4"><a href="{{ post.url }}">
     <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
 background-image: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
@@ -29,6 +24,13 @@ background-image: url({{ "/images/" | append:post.title | replace:' ','' | appen
     {% endfor %}
 
             <style type="text/css">
+            {% for post in site.posts %}
+                .{{ post.title | replace:' ',''}}:hover:before {
+                  content: "{{ post.title }}";
+                  text-decoration: none !important;
+                  border-bottom: none;
+                }
+            {% endfor %}
       .BlackandWhiteparent {
         background-size: 200% !important;
         background-position: 0% 50% !important;
