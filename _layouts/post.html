@@ -7,12 +7,12 @@ layout: default
     <h1>
       <span class="post-title">{{ page.title }}</span>
       <span class="page-heading pp" style="float:right;">
-        {% if page.categories contains "web" %}
-<a href="/{{ page.categories }}" class="label {{ page.categories }}">{{ page.categories }}</a>
+        {% if page.categories contains "dev" %}
+<a href="/{{ page.categories }}" class="label {{ page.categories }}">Development</a>
 {% elsif page.categories contains "games" %}
 <a href="/games" class="label games">games</a>
 {% else %}
-<a href="/art+design" class="label artdesign">Art+Design</a>
+<a href="/art+design" class="label artdesign">Design</a>
 {% endif %}
       </span>
     </h1>
@@ -30,6 +30,24 @@ layout: default
   -->
 </header>
 
-<article class="post-content">{{ content }}</article>
+<article class="post-content">
+{{ content }}
+<!-- <img src="{{page.img}}">
+<br><br>
+{% for p in page.content %}
+  <p>{{p}}</p>
+{% endfor %}
+<br>
+<p>
+  {% if page.prevLink %}
+  <a style="float:left;" href="{{ site.baseurl }}{{page.prevLink}}">&#8592; Previous</a></p>
+  {% endif %}
+  {% if page.nextLink %}
+  <a style="float:right;" href="{{ site.baseurl }}{{page.nextLink}}">Next &#8594;</a>
+  {% endif %}
+</p> -->
+
+
+</article>
 
 </div>

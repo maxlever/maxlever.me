@@ -4,9 +4,9 @@
     {{ include.titl }}
     <span style="float:right;">
     <a href="/" class="label label-default all">All</a>
-      {% if include.cat == 'web' %} <a href="/art+design" class="label label-success artdesign">Art+Design</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
-      {% if include.cat == 'artdesign' %} <a href="/web" class="label label-info web">Web</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
-      {% if include.cat == 'games' %} <a href="/art+design" class="label label-success artdesign">Art+Design</a> <a href="/web" class="label label-info web">Web</a> {% endif %}
+      {% if include.cat == 'dev' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
+      {% if include.cat == 'artdesign' %} <a href="/dev" class="label label-info dev">Development</a> <a href="/games" class="label label-warning games">Games</a>{% endif %}
+      {% if include.cat == 'games' %} <a href="/art+design" class="label label-success artdesign">Design</a> <a href="/dev" class="label label-info dev">Development</a> {% endif %}
     </span>
   </h1>
   <div class="row">
@@ -20,9 +20,8 @@
             </style>
     <div class="col-sm-4"><a href="{{ post.url }}">
     <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
-background: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
-              background-size:cover; background-position: center;
-              height: 200px; padding:0; margin: 2.5px -12.5px;">
+background-image: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
+            ">
     <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
     </div></div>
   </a></div>
