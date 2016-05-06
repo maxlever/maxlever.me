@@ -1,11 +1,18 @@
 /**
+ * Sticky footer
+ */
+html, body {
+    height: 100%;
+}
+
+/**
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    // border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
+    background-color: white;
     // Positioning context for the mobile navigation icon
     position: relative;
 }
@@ -94,6 +101,7 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    background-color: white;
 }
 
 .footer-heading {
@@ -162,7 +170,15 @@
  * Page content
  */
 .page-content {
+    background-color: $background-color;
     padding: $spacing-unit 0;
+    min-height: 100%;
+    margin-bottom: -75px;
+    &:after {
+      content: "";
+      display: block;
+      height: 135px;
+    }
 }
 
 .page-heading {
