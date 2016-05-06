@@ -32,22 +32,15 @@ layout: default
 
 <article class="post-content">
 {{ content }}
-<!-- <img src="{{page.img}}">
-<br><br>
-{% for p in page.content %}
-  <p>{{p}}</p>
-{% endfor %}
-<br>
 <p>
-  {% if page.prevLink %}
-  <a style="float:left;" href="{{ site.baseurl }}{{page.prevLink}}">&#8592; Previous</a></p>
-  {% endif %}
-  {% if page.nextLink %}
-  <a style="float:right;" href="{{ site.baseurl }}{{page.nextLink}}">Next &#8594;</a>
-  {% endif %}
-</p> -->
 
-
+  {% if page.previous.url %}
+    <a style="float:left;" class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a style="float:right;" class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+  {% endif %}
+</p>
 </article>
 
 </div>
