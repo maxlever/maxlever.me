@@ -8,11 +8,11 @@ layout: default
       <span class="post-title">{{ page.title }}</span>
       <span class="page-heading pp" style="float:right;">
         {% if page.categories contains "dev" %}
-<a href="/{{ page.categories }}" class="label {{ page.categories }}">Development</a>
+<a href="/dev" class="label dev">Development</a>
 {% elsif page.categories contains "games" %}
 <a href="/games" class="label games">games</a>
 {% else %}
-<a href="/art+design" class="label artdesign">Design</a>
+<a href="/design" class="label artdesign">Design</a>
 {% endif %}
       </span>
     </h1>
