@@ -2,11 +2,12 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,900);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
+@import url(http://fonts.googleapis.com/css?family=PT+Mono:400,700);
 
 // Our variables
-$base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$base-font-family: 'Crimson Text', Helvetica, Arial, sans-serif;
+$accent-font-family: 'PT Mono', Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -31,8 +32,6 @@ $on-laptop:        800px;
 $on-desktop:       1200px;
 
 $tile-height:      217px;
-
-
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -131,9 +130,15 @@ a.label-default:hover {
     background-image: none;
 }
 header .site-title {
-font-family: 'Montserrat', $base-font-family;
-font-weight: 900;
+    font-family: $accent-font-family;
+    letter-spacing: 1px;
+    font-weight: 900;
 }
+
+.label , .post-meta {
+    font-family: $accent-font-family;
+}
+
 video {
   width: 100%    !important;
   height: auto   !important;
