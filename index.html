@@ -3,11 +3,12 @@ layout: default
 ---
 
 <div class="home">
-<h1 class="page-heading">Work<span style="float:right;">
+<div class="page-heading">
+    <span style="float:right;">
     <small>Filter:&nbsp;&nbsp;</small>
     <a href="/art+design" class="label label-success artdesign">Design</a>
     <a href="/dev" class="label label-info dev">Development</a>
-    </span></h1>
+</span></div>
   <div class="row">
     {% for post in site.posts %}
     {% unless post.categories contains 'games' %}
