@@ -3,6 +3,7 @@
  */
 html, body {
     height: 100%;
+    background-color: $background-color;
 }
 
 /**
@@ -10,7 +11,7 @@ html, body {
  */
 .site-header {
     // border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    // border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
     background-color: $background-color;
     // Positioning context for the mobile navigation icon
@@ -106,7 +107,7 @@ html, body {
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    // border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
     background-color: $background-color;
 }
@@ -207,6 +208,7 @@ html, body {
 }
 
 .post-meta {
+    margin-top: 10px;
     font-size: $small-font-size;
     color: $grey-color;
 }
@@ -215,12 +217,10 @@ html, body {
     display: block;
     font-size: 24px;
 }
-
 .post-content a, .site-footer a, .page-link {
     &::after {
         content: '';
         background-color: $brand-color;
-        bottom: 0;
         padding: 0em .6em 0em;
         position: absolute;
         left: -1px;
@@ -232,17 +232,26 @@ html, body {
     }
     &:active, &:focus {
         &::after {
-            height: .5em;
+            height: .4em;
         }
     }
 
-    &:hover {
+    &:hover, &.active {
         &::after {
-            opacity: .5;
+            opacity: .6;
         }
     }
 }
-
+.site-footer a::after, .page-link::after {
+    bottom: 0;
+}
+.post-content a {
+    // font-weight: bold;
+    &::after {
+        bottom: 0em;
+        // padding: 0;
+    }
+}
 
 
 /**
@@ -264,6 +273,7 @@ html, body {
 
 .post-content {
     margin-bottom: $spacing-unit;
+    // font-style: italic;
 
     h2 {
         font-size: 32px;
