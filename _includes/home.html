@@ -1,22 +1,20 @@
 
 <div class="home">
-  <h1 class="page-heading">
-    {{ include.titl }}
+    
+  <div class="page-heading">
     <span style="float:right;">
-        <small>Filter:&nbsp;&nbsp;</small>
-        <a href="/" class="label label-default all">All</a>
-        {% if include.cat == 'dev' %}
-        <a href="/art+design" class="label label-success artdesign">Design</a>
-        {% endif %}
-        {% if include.cat == 'artdesign' %}
-        <a href="/dev" class="label label-info dev">Development</a>
-        {% endif %}
+        <small>filter:&nbsp;&nbsp;</small>
+        <a href="/" class="label label-default all">all</a>
         {% if include.cat == 'games' %}
-        <a href="/art+design" class="label label-success artdesign">Design</a>
-        <a href="/dev" class="label label-info dev">Development</a>
+        <a href="/games" class="label label-success games active">games</a>
+        <a href="/art+design" class="label label-success artdesign">design</a>
+        <a href="/dev" class="label label-info dev">development</a>
+        {% else %}
+        <a href="/art+design" class="label label-success artdesign {% if include.cat == 'artdesign' %}active{% endif %}">design</a>
+        <a href="/dev" class="label label-info dev {% if include.cat == 'dev' %}active{% endif %}">development</a>
         {% endif %}
     </span>
-  </h1>
+</div>
   <div class="row">
     {% for post in site.posts %}
     {% if post.categories contains include.cat %}
