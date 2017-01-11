@@ -13,3 +13,11 @@ devpost_username: maxlever
 
 # Build settings
 markdown: kramdown
+
+# multilang support
+gems:
+  - jekyll-polyglot
+languages: ["en", "fr"]
+default_lang: "en"
+exclude_from_localization: ["javascripts", "images", "css"]
+parallel_localization: true
