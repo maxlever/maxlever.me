@@ -40,7 +40,6 @@ html, body {
         border-bottom: 1px solid $grey-color-light;
     }
 }
-
 .site-nav {
     float: right;
     line-height: 56px;
@@ -302,5 +301,13 @@ html, body {
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+}
+
+
+[class^="col-"] {
+    margin-bottom: 0;
+    @include media-query($on-laptop) {
+        margin-bottom: 15px;
     }
 }
