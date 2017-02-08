@@ -1,4 +1,5 @@
 # Site settings
+baseurl: /
 title: Max Lever
 email: maxlever@ccs.neu.edu
 description: |
