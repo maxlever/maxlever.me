@@ -424,7 +424,7 @@ $pos: - $size * cos($angle);
   width: 100%;
   margin: 0 auto;
   &:after {
-    transition: opacity .5s;
+    transition: opacity .5s ease-in-out;
     content: 'Zoom out';
     opacity: 0;
     cursor: auto;
@@ -432,14 +432,24 @@ $pos: - $size * cos($angle);
 }
 .zoomed .bck {
   &:after {
-    opacity: 1;
+    opacity: .5;
     cursor: pointer;
+    transition: opacity .15s ease-in-out;
+  }
+  &:hover {
+    &:after {
+        opacity: 1;
+    }
   }
 }
 
 .accordeon-viewer {
+
+  .bckwd, .fwd {
+    transition: opacity .5s ease-in-out;
+    z-index: 10;
+  }
   .bckwd {
-    transition: opacity .5s;
     top:0;
     left:0;
     height: 100%;
@@ -449,7 +459,6 @@ $pos: - $size * cos($angle);
     background-image: linear-gradient(to right, rgba(black, .5), transparent);
   }
   .fwd {
-    transition: opacity .5s;
     top:0;
     right:0;
     height: 100%;
@@ -461,6 +470,7 @@ $pos: - $size * cos($angle);
   &.zoomed {
       .bckwd, .fwd {
           opacity: 0;
+          z-index: -1;
       }
   }
 }
