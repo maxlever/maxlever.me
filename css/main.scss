@@ -86,54 +86,80 @@ $tile-height:      217px;
   font-weight: 400;
   border-radius: 0;
 }
-a.label {
-  // text-transform: capitalize;
+.labels {
+    position: relative;
+    filter: invert(100%);
 }
-a.label {
-    color: $text-color;
+$v: 0px; // vertical padding
+$h: 0px; // horizontal padding
+.label-bg {
+    float: right;
+    z-index: 9;
+    background-color: #b3b39f;
+    display: block;
+    content: '';
+    height: calc(100% + #{$v});
+    top: calc(#{$v} * -.5);
+    position: absolute;
+    transition: left .5s ease-in-out, width .5s ease-in-out;
+}
+$lmargin: 2px;
+// all
+$a-w: 36px + $h;//49px;
+$a-l: $lmargin - $h / 2;//-4px;
+// artdesign
+$ad-w: 58px + $h;//70px;
+$ad-l: $a-l + $a-w + $lmargin - $h;//35px;
+// dev
+$d-w: 89px + $h;//109px;
+$d-l: $ad-l + $ad-w + $lmargin - $h;//96px;
+a.label.all.active ~ .label-bg {
+    width: $a-w;
+    left: $a-l;
+}
+a.label.dev.active ~ .label-bg {
+    width: $d-w;
+    left: $d-l;
+}
+a.label.artdesign.active ~ .label-bg {
+    width: $ad-w;
+    left: $ad-l;
+}
+a.label.all:hover ~ .label-bg {
+    width: $a-w;
+    left: $a-l;
+}
+a.label.dev:hover ~ .label-bg {
+    width: $d-w;
+    left: $d-l;
+}
+a.label.artdesign:hover ~ .label-bg {
+    width: $ad-w;
+    left: $ad-l;
+}
+a.label, a.label.dev, a.label.all, a.label.artdesign {
+    z-index: 10;
+    float: right;
+    position: relative;
+    color: #989274;//#ccc9b9;
+    background: rgba(111, 83, 83, 0);
+    mix-blend-mode: difference;
+    border: 1px solid rgba(111, 83, 83, 0);//#ccc9b9;//#8f8f94;
     &:hover, &:focus, &:active, &.active {
-        // color: $text-color;
         text-decoration: none;
-        color: $background-color;
-        background: $dev-color;
+        background: rgba(255,255,255,0);
+        // border-color: #ccc9b9;//#8f8f94;
     }
-    background-image: none;
-    background: none;
-    background-image: none;
-    border: 1px solid $text-color;
-
     margin-left: 2px;
-}
-a.label.dev {
-    color: $dev-color;
-    border-color: $dev-color;
-    &:hover, &.active {
-      color: $background-color;
-      background: $dev-color;
-    }
-}
-a.label.all {
-    color: $brand-color;
-    border-color: $brand-color;
-    &:hover, &.active {
-      color: $background-color;
-      background: $brand-color;
-    }
-}
-a.label.games {
-    color: $games-color;
-    border-color: $games-color;
-    &:hover, &.active {
-      color: $background-color;
-      background: $games-color;
-    }
-}
-a.label.artdesign {
-    color: $design-color;
-        border-color: $design-color;
-    &:hover, &.active {
-      color: $background-color;
-      background: $design-color;
+
+    .post & {
+        background: rgba(59,58,78,1);
+        color: rgba(222, 215, 202, 1);
+        &:hover, &:focus {
+            // filter: invert(100%);
+            background: rgba(159, 184, 153, 1);
+            color: rgba(11, 28, 35, 1);
+        }
     }
 }
 a.label-default:hover {
@@ -147,6 +173,7 @@ header .site-title {
     font-family: $accent-font-family;
     // letter-spacing: .05em;
     font-style: italic;
+    color: $brand-color;
 }
 
 .label, .post-meta {

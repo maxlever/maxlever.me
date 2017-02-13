@@ -1,19 +1,14 @@
 
 <div class="home">
-    
-  <div class="page-heading">
-    <span style="float:right;">
-        <small>filter:&nbsp;&nbsp;</small>
-        <a href="/" class="label label-default all">all</a>
-        {% if include.cat == 'games' %}
-        <a href="/games" class="label label-success games active">games</a>
-        <a href="/art+design" class="label label-success artdesign">design</a>
-        <a href="/dev" class="label label-info dev">development</a>
-        {% else %}
-        <a href="/art+design" class="label label-success artdesign {% if include.cat == 'artdesign' %}active{% endif %}">design</a>
+
+<div class="page-heading">
+    <span class="labels" style="float:right;">
         <a href="/dev" class="label label-info dev {% if include.cat == 'dev' %}active{% endif %}">development</a>
-        {% endif %}
+        <a href="/art+design" class="label label-success artdesign {% if include.cat == 'artdesign' %}active{% endif %}">design</a>
+        <a href="/" class="label label-default all">all</a>
+        <span class="label-bg"></span>
     </span>
+    <small style="float:right;">filter:&nbsp;&nbsp;</small>
 </div>
   <div class="row">
     {% for post in site.posts %}
