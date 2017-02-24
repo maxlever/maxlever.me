@@ -5,6 +5,10 @@ $(document).ready(function() {
     angle = 30;
     pages = 22;
     sc = .4;
+    $berlin = $('.berlin-prez');
+    $berlin.click(function (e) {
+        $berlin.toggleClass('active');
+    })
 
     pos = [0];
     for (i = 1; i <= pages; i++) {
