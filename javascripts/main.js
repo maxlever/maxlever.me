@@ -5,6 +5,7 @@ $(document).ready(function() {
     angle = 30;
     pages = 22;
     sc = .4;
+
     $berlin = $('.berlin-prez');
     $berlin.click(function (e) {
         $berlin.toggleClass('active');
@@ -16,17 +17,18 @@ $(document).ready(function() {
     }
 
     hoveredOn = -1;
+
     function pgNum(cl) {
         return parseInt(cl.substr(1, cl.length)) - 1;
     }
+
     scrollToPage = function (page) {
       leftOver = 1 - (($('.accordeon-viewer').width() - s) / 2)/s;
-      scrollPos =  (- page - leftOver)*s*sc;
+      scrollPos = - pos[page] + $('.accordeon-viewer').width() / 2;
       $('[class^=q]').css('transform', function() {
         n = pgNum(this.className);
         return 'translate3d(' + (n + 1 - page - leftOver) * s + 'px, 20px, 0) rotate3d(1, 0, 0, 0deg)';
       });
-    //   $('.accordeon-viewer').css('perspective', '10000px');
       hoveredOn = page;
     }
 
@@ -45,16 +47,18 @@ $(document).ready(function() {
           scrollToPage(hoveredOn);
       }
     }
+
     onHover = function(e) {
         hoveredOn = pgNum(this.className);
     }
+
     goBack = function(offset) {
         return function() {
               $('.accordeon-viewer').removeClass('zoomed');
               $('[class^=q]').css('transform', function() {
                 n = pgNum(this.className);
                 return 'scale3d('+sc + ',' + sc + ',' + sc + ') '+
-                       'translate3d(' + (pos[n] - 100 + scrollPos) + 'px, 80px, 0) '+
+                       'translate3d(' + (pos[n] + scrollPos) + 'px, 80px, 0) '+
                        'rotate3d(1, 0, 0, 30deg) '+
                        'rotate3d(0, 1, 0,'+ -Math.pow(-1, n % 2) * (angle + n + 1) + 'deg)';
               });
@@ -63,19 +67,17 @@ $(document).ready(function() {
         };
     }
 
-
     var scrollPos = 0;
     $('[class^=q]').click(zoomIn);
     $('[class^=q]').click(clickToScroll);
-    // $('[class^=q]').hover(onHover);
     $('.bck').click(goBack(0));
-    // $('[class^=q]').dblclick(goBack);
 
     var lastX;
     var startTime;
     var lastTouchTime;
     var acceleration;
     var momentum = 1;
+
     $('.accordeon-viewer').bind('touchstart', function(e) {
         lastX = e.originalEvent.touches[0].clientX;
         startTime = $.now();
@@ -106,7 +108,6 @@ $(document).ready(function() {
     function scroll(dir) {
         return function() {
             scrollPos = Math.min($('.accordeon-viewer').width(), Math.max(-4000 + $('.accordeon-viewer').width(), scrollPos + dir * s * sc * .1));
-            console.log(scrollPos);
 
             $('[class^=q]').css('transition', 'transform 0s');
             goBack(scrollPos)();
@@ -123,21 +124,4 @@ $(document).ready(function() {
     }, function () {
         clearInterval(intervalId);
     });
-
-    // var folded = false;
-    // $('.anim').click(function() {
-    //     if (folded) {
-    //         goBack(0)();
-    //     } else {
-    //         $('[class^=q]').css('transform', function () {
-    //             n = parseInt(this.className.substr(1, this.className.length)) - 1;
-    //             return ' rotate3d(1, 0, 0, -10deg)'+
-    //                    ' translate3d(500px, 10px,'+ n * s * .86+'px)'+
-    //                    ' rotate3d(0, 1, 0, '+ -Math.pow(-1, n%2) * 30 + 'deg)'+
-    //                    ' scaleX(' + -Math.pow(-1, n%2) + ')';
-    //         });
-    //     }
-    //     folded = !folded;
-    // })
-
 });
