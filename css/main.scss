@@ -446,7 +446,10 @@ $pos: - $size * cos($angle);
 
   }
 }
-
+.q23 {
+    z-index: -10;
+    opacity: 0;
+}
 .accordeon-viewer {
   transition: perspective .8s;
   perspective: 600px;
