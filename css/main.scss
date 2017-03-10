@@ -230,7 +230,7 @@ img {
 .hovers:hover:before {
     @include vertical-align;
     color: #FCFFF5;
-        transition: all .2s;
+    transition: all .2s;
     text-decoration: none !important;
 
     background-color: rgba(0,0,0,0);
@@ -241,6 +241,28 @@ img {
 .col-sm-4 a:hover {
     text-decoration: none;
 }
+
+@media screen and (max-width: 600px) {
+    .hovers {
+        transition: all .2s;
+        background: none;
+        background: rgba(#050517,.3);
+    }
+    .hovers:before {
+        @include vertical-align;
+        color: #FCFFF5;
+        transition: all .2s;
+        text-decoration: none !important;
+        background-color: rgba(0,0,0,0);
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .col-sm-4 a {
+        text-decoration: none;
+    }
+}
+
 .col-inner {
   background-size:cover;
   background-position: center;
