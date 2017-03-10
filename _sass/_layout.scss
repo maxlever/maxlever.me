@@ -267,7 +267,7 @@ html, body {
 
 .post-title {
     font-size: 24px;
-    letter-spacing: -1px;
+    letter-spacing: -.5px;
     line-height: 1;
 
     @include media-query($on-laptop) {
