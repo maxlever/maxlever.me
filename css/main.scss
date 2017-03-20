@@ -1,37 +1,26 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
-// @import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400i|Droid+Sans:400,700);
-
 // Our variables
 $base-font-family: 'Crimson Text', Helvetica, Arial, sans-serif;
 $accent-font-family: 'Crimson Text', Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fafafa;//#f9f9ea; // #3E606F;
-
-$grey-color:       #828282;
+$spacing-unit: 30px;
+$text-color: #111;
+$background-color: #EAFDF8; //#f9f9ea; // #3E606F;
+$grey-color: #7C616C;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$brand-color:      lighten($grey-color, 10%);
-
-$dev-color: $brand-color;//#17688E;//#4A4B6C;
-$games-color: $brand-color;//#DDD3EA;
-$design-color: $brand-color;//#81A684;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-$on-desktop:       1200px;
-
-$tile-height:      217px;
-
+$grey-color-dark: darken($grey-color, 25%);
+$brand-color: lighten($grey-color, 10%);
+$dev-color: $brand-color; //#17688E;//#4A4B6C;
+$games-color: $brand-color; //#DDD3EA;
+$design-color: $brand-color; //#81A684;
+$on-palm: 600px;
+$on-laptop: 800px;
+$on-desktop: 1200px;
+$tile-height: 217px;
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {
@@ -40,58 +29,57 @@ $tile-height:      217px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
+     @media screen and (max-width: $device){
         @content;
     }
 }
-
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "base", "layout", "syntax-highlighting";
 
 .grayscale {
-    -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-    -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -moz-filter: url( "data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -o-filter: url( "data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     filter: gray;
     //  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-    -moz-transition : -moz-filter .2s ease-in-out;
-    -o-transition : -o-filter .2s ease-in-out;
-    -webkit-transition : .2s -webkit-filter ease-in-out;
-    transition: .2s filter ease-in-out;
+    -moz-transition: -moz-filter 0.2s ease-in-out;
+    -o-transition: -o-filter 0.2s ease-in-out;
+    -webkit-transition: 0.2s -webkit-filter ease-in-out;
+    transition: 0.2s filter ease-in-out;
 }
+
 .no-grayscale {
     -moz-filter: none;
     -o-filter: none;
     -webkit-filter: none;
     filter: none;
-
 }
+
 .row {
     margin-left: -8px;
     margin-right: -8px;
 }
+
 .hovers {
-  padding: 0;
-  width: 100%; height:$tile-height;
-  margin-left: 0;
+    padding: 0;
+    width: 100%;
+    height: $tile-height;
+    margin-left: 0;
 }
+
 .label {
-  font-weight: 400;
-  border-radius: 0;
+    font-weight: 400;
+    border-radius: 0;
 }
+
 .labels {
     position: relative;
     filter: invert(100%);
 }
 $v: 0px; // vertical padding
 $h: 0px; // horizontal padding
+
 .label-bg {
     float: right;
     z-index: 9;
@@ -101,51 +89,65 @@ $h: 0px; // horizontal padding
     height: calc(100% + #{$v});
     top: calc(#{$v} * -.5);
     position: absolute;
-    transition: left .5s ease-in-out, width .5s ease-in-out;
+    transition: left 0.5s ease-in-out, width 0.5s ease-in-out;
 }
-$lmargin: 2px;
-// all
-$a-w: 36px + $h;//49px;
-$a-l: $lmargin - $h / 2;//-4px;
+
+$lmargin: 2px; // all
+$a-w: 36px + $h; //49px;
+$a-l: $lmargin - $h / 2; //-4px;
 // artdesign
-$ad-w: 58px + $h;//70px;
-$ad-l: $a-l + $a-w + $lmargin - $h;//35px;
+$ad-w: 58px + $h; //70px;
+$ad-l: $a-l + $a-w + $lmargin - $h; //35px;
 // dev
-$d-w: 89px + $h;//109px;
-$d-l: $ad-l + $ad-w + $lmargin - $h;//96px;
+$d-w: 89px + $h; //109px;
+$d-l: $ad-l + $ad-w + $lmargin - $h; //96px;
+
 a.label.all.active ~ .label-bg {
     width: $a-w;
     left: $a-l;
 }
+
 a.label.dev.active ~ .label-bg {
     width: $d-w;
     left: $d-l;
 }
+
 a.label.artdesign.active ~ .label-bg {
     width: $ad-w;
     left: $ad-l;
 }
+
 a.label.all:hover ~ .label-bg {
     width: $a-w;
     left: $a-l;
 }
+
 a.label.dev:hover ~ .label-bg {
     width: $d-w;
     left: $d-l;
 }
+
 a.label.artdesign:hover ~ .label-bg {
     width: $ad-w;
     left: $ad-l;
 }
-a.label, a.label.dev, a.label.all, a.label.artdesign {
+
+a.label,
+a.label.all,
+a.label.artdesign,
+a.label.dev {
     z-index: 10;
     float: right;
     position: relative;
-    color: #989274;//#ccc9b9;
+    color: #989274; //#ccc9b9;
     background: rgba(111, 83, 83, 0);
     mix-blend-mode: difference;
-    border: 1px solid rgba(111, 83, 83, 0);//#ccc9b9;//#8f8f94;
-    &:hover, &:focus, &:active, &.active {
+    border: 1px solid rgba(111, 83, 83, 0); //#ccc9b9;//#8f8f94;
+
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
         text-decoration: none;
         background: rgba(255,255,255,0);
         // border-color: #ccc9b9;//#8f8f94;
@@ -155,19 +157,23 @@ a.label, a.label.dev, a.label.all, a.label.artdesign {
     .post & {
         background: rgba(59,58,78,1);
         color: rgba(222, 215, 202, 1);
-        &:hover, &:focus {
+
+        &:focus,
+        &:hover {
             // filter: invert(100%);
             background: rgba(159, 184, 153, 1);
             color: rgba(11, 28, 35, 1);
         }
     }
 }
+
 a.label-default:hover {
     background-color: none;
     background: none;
     background-image: none;
     background-image: none;
 }
+
 header .site-title {
     font-size: 24px;
     font-family: $accent-font-family;
@@ -176,109 +182,114 @@ header .site-title {
     color: $brand-color;
 }
 
-.label, .post-meta {
+.label,
+.post-meta {
     font-family: $accent-font-family;
     font-style: italic;
 }
 
-.footer-col, .post-header, .page-heading, .site-nav {
+.footer-col,
+.page-heading,
+.post-header,
+.site-nav {
     text-transform: capitalize;
 }
 
 video {
-  width: 100%    !important;
-  height: auto   !important;
+    width: 100% !important;
+    height: auto !important;
+}
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
- @mixin vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 img {
     max-width: 100%;
     vertical-align: middle;
 }
+
 .hovers {
-    text-align: center;
+    text-align: left;
     font-family: $base-font-family;
     font-weight: 400;
     background: rgba(252, 255, 245, .2);
-    padding: 0;
+    padding: 0 20px;
     width: 100%;
-    height:$tile-height;
+    height: $tile-height;
     margin-left: 0;
+    line-height: 1.3;
 }
+
 .hovers:hover {
-    // width: 66.666666%;
-    transition: all .2s;
+    transition: all 0.2s;
     background: none;
-    background: rgba(#050517,.5);
+    background: rgba(#050517,.8);
+
+    &:after,
+    &:before {
+        display: block;
+    }
 }
-// .dev:hover {
-//     background: rgba(91,192,222,.75);
-//
-// }
-// .games:hover {
-//     background: rgba(240,173,78, .75);
-// }
-// .artdesign:hover {
-//     background: rgba(92,184,92,.75);
-// }
-.hovers:hover:before {
+
+.hovers:before {
     @include vertical-align;
     color: #FCFFF5;
-    transition: all .2s;
+    transition: all 0.2s;
     text-decoration: none !important;
-
     background-color: rgba(0,0,0,0);
-    display: block;
+    display: none;
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.col-sm-4 a:hover {
-    text-decoration: none;
+
+.hovers:after {
+    position: relative;
+    top: 36%;
+    display: none;
+    color: rgba(#fff, .8);
+    font-style: italic;
+    letter-spacing: 0.07em;
 }
 
-@media screen and (max-width: 600px) {
+.col-sm-4 a {
+    text-decoration: none;
+}
+@media screen and (max-width: 599px) {
     .hovers {
-        transition: all .2s;
+        transition: all 0.2s;
         background: none;
-        background: rgba(#050517,.3);
+        background: rgba(#050517,.5);
     }
+
     .hovers:before {
-        @include vertical-align;
-        color: #FCFFF5;
-        transition: all .2s;
-        text-decoration: none !important;
-        background-color: rgba(0,0,0,0);
         display: block;
-        padding-top: 15px;
-        padding-bottom: 15px;
     }
-    .col-sm-4 a {
-        text-decoration: none;
+
+    .hovers:after {
+        display: block;
     }
 }
 
 .col-inner {
-  background-size:cover;
-  background-position: center;
-  height:$tile-height;
-  padding: 0;
-  margin: 7.5px -7.5px;
-
+    background-size: cover;
+    background-position: center;
+    height: $tile-height;
+    padding: 0;
+    margin: 7.5px -7.5px;
 }
+
 span.page-heading.pp {
-  margin-top: 10px;
+    margin-top: 10px;
 }
-
 @media screen and (max-width: 600px) {
     .site-nav .menu-icon {
         padding: 5px 0;
     }
+
     .site-nav {
         top: calc(50% - 15px);
     }
@@ -286,17 +297,15 @@ span.page-heading.pp {
 
 .post_img_soft {
     border-radius: 3px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .post_img_hard {
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
-
 // berlin presentation
-
 .berlin-prez {
-	width: 100%;
+    width: 100%;
     max-width: 680px;
     margin: 0 auto;
     height: calc((100vw - 30px) * 566 / 800);
@@ -305,239 +314,243 @@ span.page-heading.pp {
     background-size: auto 100%;
     cursor: pointer;
 }
-
 @media (min-width: 768px) {
-    .berlin-prez { height: 481.1px; }
+    .berlin-prez {
+        height: 481.1px;
+    }
 }
+
 .berlin-prez:hover:after {
     content: '';
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     background-color: rgba(0,0,0,0.05);
     z-index: 10;
     width: 100%;
     height: 100%;
     display: block;
 }
+
 .berlin-prez.active {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
-
-
 @keyframes berlin {
-	0% { background-position: 0 0; }
-	100% { background-position: calc(-17 * (100vw - 30px)) 0; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(-17 * (100vw - 30px)) 0;
+    }
 }
 @media (min-width: 768px) {
-    @keyframes berlin {
-    	0% { background-position: 0 0; }
-    	100% { background-position: calc(-17 * 680px) 0; }
+     @keyframes berlin{
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: calc(-17 * 680px) 0;
+        }
     }
 }
-
 // history of GD animation
-
 @function pow($number, $exp) {
-  $value: 1;
-  @if $exp > 0 {
-    @for $i from 1 through $exp {
-      $value: $value * $number;
+    $value: 1;
+    @if $exp > 0 {
+         @for $i from 1 through $exp{
+            $value: $value * $number;
+        }
     }
-  }
-  @else if $exp < 0 {
-    @for $i from 1 through -$exp {
-      $value: $value / $number;
+    @else if $exp < 0 {
+         @for $i from 1 through -$exp{
+            $value: $value / $number;
+        }
     }
-  }
-  @return $value;
+    @return $value;
 }
-
 @function fact($number) {
-  $value: 1;
-  @if $number > 0 {
-    @for $i from 1 through $number {
-      $value: $value * $i;
+    $value: 1;
+    @if $number > 0 {
+         @for $i from 1 through $number{
+            $value: $value * $i;
+        }
     }
-  }
-  @return $value;
+    @return $value;
 }
-
 @function pi() {
-  @return 3.14159265359;
+     @return 3.14159265359;
 }
-
 @function rad($angle) {
-  $unit: unit($angle);
-  $unitless: $angle / ($angle * 0 + 1);
-  // If the angle has 'deg' as unit, convert to radians.
-  @if $unit == deg {
-    $unitless: $unitless / 180 * pi();
-  }
-  @return $unitless;
+    $unit: unit($angle);
+    $unitless: $angle / ($angle * 0 + 1);
+    // If the angle has 'deg' as unit, convert to radians.
+    @if $unit == deg {
+        $unitless: $unitless / 180 * pi();
+    }
+    @return $unitless;
 }
-
 @function sin($angle) {
-  $sin: 0;
-  $angle: rad($angle);
-  // Iterate a bunch of times.
-  @for $i from 0 through 10 {
-    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
-  }
-  @return $sin;
+    $sin: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+    }
+    @return $sin;
 }
-
 @function cos($angle) {
-  $cos: 0;
-  $angle: rad($angle);
-  // Iterate a bunch of times.
-  @for $i from 0 through 10 {
-    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
-  }
-  @return $cos;
+    $cos: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+    }
+    @return $cos;
 }
-
 @function tan($angle) {
-  @return sin($angle) / cos($angle);
+     @return sin($angle) / cos($angle);
 }
-
 @function one($exp) {
-    @return pow(-1, $exp % 2);
+     @return pow(-1, $exp % 2);
 }
-
 @function getbg($pg, $i) {
-  $c: 150 - one($i) * (50 + $i * 4);
-  @return rgba($c, $c, $c, .5);
+    $c: 150 - one($i) * (50 + $i * 4);
+    @return rgba($c, $c, $c, .5);
 }
-
 $size: 250px;
 $angle: 30deg;
 $pages: 23;
-$scale: .4;
+$scale: 0.4;
 $top: 80px;
 
 [class^=q] {
-  transition: transform .8s ease-in-out,
-              background .8s ease-in-out,
-              opacity .8s ease-in-out;
-  height: $size;
-  width: $size;
-  position: absolute;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  background-size: cover;
-  .zoomed &:after {
-    opacity: 0;
-  }
-}
+    transition: transform 0.8s ease-in-out, background 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    height: $size;
+    width: $size;
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    background-size: cover;
 
-$pos: - $size * cos($angle);
-
-@for $n from 1 through $pages {
-  $angle: $angle + 1deg;
-  $pos: $pos + $size * cos($angle);
-  $bgtint: getbg($pages, $n);
-  $pageurl: '/images/acc/acc%20' + $n + '.jpeg';
-
-  .q#{$n} {
-    background-image: url($pageurl);
-    transform: scale3d($scale, $scale, $scale)
-               translate3d($pos, $top, 0)
-               rotate3d(1, 0, 0, 30deg)
-               rotate3d(0, 1, 0, one($n) * $angle);
-
-    &:after {
-      transition: opacity .8s, background .15s;
-      content: '';
-      position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .5;
-      background-color: $bgtint;
-    }
-
-    &:hover {
-      &:after {
-        background-color: darken($bgtint, 50%);
-        opacity: .5;
-      }
-    }
     .zoomed &:after {
-        transition: opacity .15s, background .15s;
+        opacity: 0;
     }
-
-  }
 }
+$pos: - $size * cos($angle);
+@for $n from 1 through $pages {
+    $angle: $angle + 1deg;
+    $pos: $pos + $size * cos($angle);
+    $bgtint: getbg($pages, $n);
+    $pageurl: '/images/acc/acc%20' + $n + '.jpeg';
+
+    .q#{$n} {
+        background-image: url($pageurl);
+        transform: scale3d($scale, $scale, $scale) translate3d($pos, $top, 0) rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, one($n) * $angle);
+
+        &:after {
+            transition: opacity 0.8s, background 0.15s;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-color: $bgtint;
+        }
+
+        &:hover {
+            &:after {
+                background-color: darken($bgtint, 50%);
+                opacity: 0.5;
+            }
+        }
+
+        .zoomed &:after {
+            transition: opacity 0.15s, background 0.15s;
+        }
+    }
+}
+
 .q23 {
     z-index: -10;
     opacity: 0;
 }
+
 .accordeon-viewer {
-  transition: perspective .8s;
-  perspective: 600px;
-  width: 100%;
-  height: 300px;
-  background-color: $grey-color-light;
-  position: relative;
-  margin : 0 auto;
-  overflow: hidden;
+    transition: perspective 0.8s;
+    perspective: 600px;
+    width: 100%;
+    height: 300px;
+    background-color: $grey-color-light;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .bck {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  &:after {
-    transition: opacity .5s ease-in-out;
-    content: 'Zoom out';
-    opacity: 0;
-    cursor: auto;
-  }
-}
-.zoomed .bck {
-  &:after {
-    opacity: .5;
-    cursor: pointer;
-    transition: opacity .15s ease-in-out;
-  }
-  &:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+
     &:after {
-        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        content: 'Zoom out';
+        opacity: 0;
+        cursor: auto;
     }
-  }
+}
+
+.zoomed .bck {
+    &:after {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
 }
 
 .accordeon-viewer {
+    .bckwd,
+    .fwd {
+        transition: opacity 0.5s ease-in-out;
+        z-index: 10;
+    }
 
-  .bckwd, .fwd {
-    transition: opacity .5s ease-in-out;
-    z-index: 10;
-  }
-  .bckwd {
-    top:0;
-    left:0;
-    height: 100%;
-    width: 10%;
-    position: absolute;
-    opacity: .4;
-    background-image: linear-gradient(to right, rgba(black, .5), transparent);
-  }
-  .fwd {
-    top:0;
-    right:0;
-    height: 100%;
-    width: 10%;
-    position: absolute;
-    opacity: .4;
-    background-image: linear-gradient(to left, rgba(black, .5), transparent);
-  }
-  &.zoomed {
-      .bckwd, .fwd {
-          opacity: 0;
-          z-index: -1;
-      }
-  }
+    .bckwd {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        opacity: 0.4;
+        background-image: linear-gradient(to right, rgba(black, .5), transparent);
+    }
+
+    .fwd {
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        opacity: 0.4;
+        background-image: linear-gradient(to left, rgba(black, .5), transparent);
+    }
+
+    &.zoomed {
+        .bckwd,
+        .fwd {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
 }
