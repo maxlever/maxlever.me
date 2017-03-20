@@ -12,36 +12,30 @@
 </div>
   <div class="row">
     {% for post in site.posts %}
-    {% if post.categories contains include.cat %}
-    <div class="col-sm-4"><a href="{{ post.url }}">
-    <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
-background-image: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
-            ">
-    <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
-    </div></div>
-  </a></div>
-{% endif %}
+        {% if post.categories contains include.cat %}
+        <div class="col-sm-4"><a href="{{ post.url }}">
+        <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
+        background-image: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
+                ">
+        <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
+        </div></div>
+        </a></div>
+        {% endif %}
     {% endfor %}
 
-            <style type="text/css">
-            {% for post in site.posts %}
-                .{{ post.title | replace:' ',''}}:hover:before {
-                  content: "{{ post.title }}";
-                  text-decoration: none !important;
-                  border-bottom: none;
-                }
-                @media (max-width: 600px) {
-                    .{{ post.title | replace:' ',''}}:before {
-                      content: "{{ post.title }}";
-                      text-decoration: none !important;
-                      border-bottom: none;
-                    }
-                }
-            {% endfor %}
-      .BlackandWhiteparent {
-        background-size: 200% !important;
-        background-position: 0% 50% !important;
-      }
+    <style type="text/css">
+    {% for post in site.posts %}
+        {% assign title = post.title | replace:' ','' %}
+        .{{ title }}:before {
+            content: "{{ post.title }}";
+            text-decoration: none !important;
+            border-bottom: none;
+        }
+        .{{ title }}:after {
+            content: "{{ post.info }}";
+            text-decoration: none !important;
+        }
+    {% endfor %}
     </style>
   </div>
 </div>
