@@ -222,26 +222,26 @@ img {
     height: $tile-height;
     margin-left: 0;
     line-height: 1.3;
+    transition: all 0.3s;
 }
 
 .hovers:hover {
-    transition: all 0.2s;
     background: none;
     background: rgba(#050517,.8);
 
     &:after,
     &:before {
-        display: block;
+        opacity: 1;
     }
 }
 
 .hovers:before {
     @include vertical-align;
     color: #FCFFF5;
-    transition: all 0.2s;
     text-decoration: none !important;
     background-color: rgba(0,0,0,0);
-    display: none;
+    display: block;
+    opacity: 0;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -249,7 +249,8 @@ img {
 .hovers:after {
     position: relative;
     top: 36%;
-    display: none;
+    display: block;
+    opacity: 0;
     color: rgba(#fff, .8);
     font-style: italic;
     letter-spacing: 0.02em;
@@ -260,17 +261,16 @@ img {
 }
 @media screen and (max-width: 599px) {
     .hovers {
-        transition: all 0.2s;
         background: none;
         background: rgba(#050517,.5);
     }
 
     .hovers:before {
-        display: block;
+        opacity: 1;
     }
 
     .hovers:after {
-        display: block;
+        opacity: 1;
     }
 }
 
