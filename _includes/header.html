@@ -14,9 +14,10 @@
       </a>
 
       <div class="trigger">
-          <a class="page-link {% if page.title != 'About' %}active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">work</a>
-          <a class="page-link {% if page.title == 'About' %}active{% endif %}" href="{{ '/about' | prepend: site.baseurl }}">about</a>
-          <a class="page-link" target="_blank" href="https://www.dropbox.com/s/9dxp347qgabsjnb/MaxLeverResume.pdf?raw=1">résumé</a>
+          <a class="page-link work {% if page.title != 'About' %}active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">work</a>
+          <a class="page-link about {% if page.title == 'About' %}active{% endif %}" href="{{ '/about' | prepend: site.baseurl }}">about</a>
+          <a class="page-link resume" target="_blank" href="https://www.dropbox.com/s/9dxp347qgabsjnb/MaxLeverResume.pdf?raw=1">résumé</a>
+          <div id="menu-line"></div>
       </div>
     </nav>
 
