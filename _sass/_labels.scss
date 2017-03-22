@@ -33,19 +33,25 @@ $ad-l: $a-l + $a-w + $lmargin - $h; //35px;
 $d-w: 89px + $h; //109px;
 $d-l: $ad-l + $ad-w + $lmargin - $h; //96px;
 
-a.label.all.active ~ .label-bg {
-    width: $a-w;
-    left: $a-l;
+.home--all {
+    a.label.all ~ .label-bg {
+        width: $a-w;
+        left: $a-l;
+    }
 }
 
-a.label.dev.active ~ .label-bg {
-    width: $d-w;
-    left: $d-l;
+.home--dev {
+    a.label.dev ~ .label-bg {
+        width: $d-w;
+        left: $d-l;
+    }
 }
 
-a.label.artdesign.active ~ .label-bg {
+.home--artdesign {
+    a.label.artdesign ~ .label-bg {
     width: $ad-w;
     left: $ad-l;
+    }
 }
 
 a.label.all:hover ~ .label-bg {
