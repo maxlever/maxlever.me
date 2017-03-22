@@ -1,0 +1,51 @@
+// berlin presentation
+.berlin-prez {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    height: calc((100vw - 30px) * 566 / 800);
+    background-image: url('/images/berlin_sprite.jpg');
+    animation: berlin 10s steps(17, end) infinite;
+    background-size: auto 100%;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .berlin-prez {
+        height: 481.1px;
+    }
+}
+
+.berlin-prez:hover:after {
+    content: '';
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.05);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.berlin-prez.active {
+    animation-play-state: paused;
+}
+@keyframes berlin {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(-17 * (100vw - 30px)) 0;
+    }
+}
+@media (min-width: 768px) {
+     @keyframes berlin{
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: calc(-17 * 680px) 0;
+        }
+    }
+}
