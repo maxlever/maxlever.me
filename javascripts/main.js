@@ -26,7 +26,7 @@ function ajaxify() {
 			$newPage = $(data);
 			$oldPage = $('.page-content');
 			if ($newPage.has('.home').length > 0 && $oldPage.has('.home').length > 0) {
-				$('.projects').html($newPage.filter('.projects').children());
+				$('.projects').html($newPage.find('.projects').children());
 			} else {
 				$oldPage.html($newPage.filter('.page-content').children());
 			}
