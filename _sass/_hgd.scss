@@ -1,0 +1,200 @@
+// history of GD animation
+@function pow($number, $exp) {
+    $value: 1;
+    @if $exp > 0 {
+         @for $i from 1 through $exp{
+            $value: $value * $number;
+        }
+    }
+    @else if $exp < 0 {
+         @for $i from 1 through -$exp{
+            $value: $value / $number;
+        }
+    }
+    @return $value;
+}
+@function fact($number) {
+    $value: 1;
+    @if $number > 0 {
+         @for $i from 1 through $number{
+            $value: $value * $i;
+        }
+    }
+    @return $value;
+}
+@function pi() {
+     @return 3.14159265359;
+}
+@function rad($angle) {
+    $unit: unit($angle);
+    $unitless: $angle / ($angle * 0 + 1);
+    // If the angle has 'deg' as unit, convert to radians.
+    @if $unit == deg {
+        $unitless: $unitless / 180 * pi();
+    }
+    @return $unitless;
+}
+@function sin($angle) {
+    $sin: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+    }
+    @return $sin;
+}
+@function cos($angle) {
+    $cos: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+    }
+    @return $cos;
+}
+@function tan($angle) {
+     @return sin($angle) / cos($angle);
+}
+@function one($exp) {
+     @return pow(-1, $exp % 2);
+}
+@function getbg($pg, $i) {
+    $c: 150 - one($i) * (50 + $i * 4);
+    @return rgba($c, $c, $c, .5);
+}
+$size: 250px;
+$angle: 30deg;
+$pages: 23;
+$scale: 0.4;
+$top: 80px;
+
+[class^=q] {
+    transition: transform 0.8s ease-in-out, background 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    height: $size;
+    width: $size;
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    background-size: cover;
+
+    .zoomed &:after {
+        opacity: 0;
+    }
+}
+$pos: - $size * cos($angle);
+@for $n from 1 through $pages {
+    $angle: $angle + 1deg;
+    $pos: $pos + $size * cos($angle);
+    $bgtint: getbg($pages, $n);
+    $pageurl: '/images/acc/acc%20' + $n + '.jpeg';
+
+    .q#{$n} {
+        background-image: url($pageurl);
+        transform: scale3d($scale, $scale, $scale) translate3d($pos, $top, 0) rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, one($n) * $angle);
+
+        &:after {
+            transition: opacity 0.8s, background 0.15s;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-color: $bgtint;
+        }
+
+        &:hover {
+            &:after {
+                background-color: darken($bgtint, 50%);
+                opacity: 0.5;
+            }
+        }
+
+        .zoomed &:after {
+            transition: opacity 0.15s, background 0.15s;
+        }
+    }
+}
+
+.q23 {
+    z-index: -10;
+    opacity: 0;
+}
+
+.accordeon-viewer {
+    transition: perspective 0.8s;
+    perspective: 600px;
+    width: 100%;
+    height: 300px;
+    background-color: $grey-color-light;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.bck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    &:after {
+        transition: opacity 0.5s ease-in-out;
+        content: 'Zoom out';
+        opacity: 0;
+        cursor: auto;
+    }
+}
+
+.zoomed .bck {
+    &:after {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+.accordeon-viewer {
+    .bckwd,
+    .fwd {
+        transition: opacity 0.5s ease-in-out;
+        z-index: 10;
+    }
+
+    .bckwd {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        opacity: 0.4;
+        background-image: linear-gradient(to right, rgba(black, .5), transparent);
+    }
+
+    .fwd {
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        opacity: 0.4;
+        background-image: linear-gradient(to left, rgba(black, .5), transparent);
+    }
+
+    &.zoomed {
+        .bckwd,
+        .fwd {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+}

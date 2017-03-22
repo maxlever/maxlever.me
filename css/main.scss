@@ -1,26 +1,9 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-// Our variables
-$base-font-family: 'Crimson Text', Helvetica, Arial, sans-serif;
-$accent-font-family: 'Crimson Text', Helvetica, Arial, sans-serif;
-$base-font-size: 16px;
-$small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.5;
-$spacing-unit: 30px;
-$text-color: #111;
-$background-color: #EAFDF8; //#f9f9ea; // #3E606F;
-$grey-color: #7C616C;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: darken($grey-color, 25%);
-$brand-color: lighten($grey-color, 10%);
-$dev-color: $brand-color; //#17688E;//#4A4B6C;
-$games-color: $brand-color; //#DDD3EA;
-$design-color: $brand-color; //#81A684;
-$on-palm: 600px;
-$on-laptop: 800px;
-$on-desktop: 1200px;
-$tile-height: 217px;
+
+@import "variables";
+
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {
@@ -33,6 +16,15 @@ $tile-height: 217px;
         @content;
     }
 }
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base", "layout", "syntax-highlighting";
 
@@ -61,118 +53,7 @@ $tile-height: 217px;
     margin-right: -8px;
 }
 
-.hovers {
-    padding: 0;
-    width: 100%;
-    height: $tile-height;
-    margin-left: 0;
-}
-
-.label {
-    font-weight: 400;
-    border-radius: 0;
-}
-
-.labels {
-    position: relative;
-    filter: invert(100%);
-}
-$v: 0px; // vertical padding
-$h: 0px; // horizontal padding
-
-.label-bg {
-    float: right;
-    z-index: 9;
-    background-color: #b3b39f;
-    display: block;
-    content: '';
-    height: calc(100% + #{$v});
-    top: calc(#{$v} * -.5);
-    position: absolute;
-    transition: left 0.5s ease-in-out, width 0.5s ease-in-out;
-}
-
-$lmargin: 2px; // all
-$a-w: 36px + $h; //49px;
-$a-l: $lmargin - $h / 2; //-4px;
-// artdesign
-$ad-w: 58px + $h; //70px;
-$ad-l: $a-l + $a-w + $lmargin - $h; //35px;
-// dev
-$d-w: 89px + $h; //109px;
-$d-l: $ad-l + $ad-w + $lmargin - $h; //96px;
-
-a.label.all.active ~ .label-bg {
-    width: $a-w;
-    left: $a-l;
-}
-
-a.label.dev.active ~ .label-bg {
-    width: $d-w;
-    left: $d-l;
-}
-
-a.label.artdesign.active ~ .label-bg {
-    width: $ad-w;
-    left: $ad-l;
-}
-
-a.label.all:hover ~ .label-bg {
-    width: $a-w;
-    left: $a-l;
-}
-
-a.label.dev:hover ~ .label-bg {
-    width: $d-w;
-    left: $d-l;
-}
-
-a.label.artdesign:hover ~ .label-bg {
-    width: $ad-w;
-    left: $ad-l;
-}
-
-a.label,
-a.label.all,
-a.label.artdesign,
-a.label.dev {
-    z-index: 10;
-    float: right;
-    position: relative;
-    color: #989274; //#ccc9b9;
-    background: rgba(111, 83, 83, 0);
-    mix-blend-mode: difference;
-    border: 1px solid rgba(111, 83, 83, 0); //#ccc9b9;//#8f8f94;
-
-    &.active,
-    &:active,
-    &:focus,
-    &:hover {
-        text-decoration: none;
-        background: rgba(255,255,255,0);
-        // border-color: #ccc9b9;//#8f8f94;
-    }
-    margin-left: 2px;
-
-    .post & {
-        background: rgba(59,58,78,1);
-        color: rgba(222, 215, 202, 1);
-
-        &:focus,
-        &:hover {
-            // filter: invert(100%);
-            background: rgba(159, 184, 153, 1);
-            color: rgba(11, 28, 35, 1);
-        }
-    }
-}
-
-a.label-default:hover {
-    background-color: none;
-    background: none;
-    background-image: none;
-    background-image: none;
-}
+@import "labels", "menu";
 
 header .site-title {
     font-size: 24px;
@@ -199,13 +80,6 @@ video {
     width: 100% !important;
     height: auto !important;
 }
-@mixin vertical-align {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
 
 img {
     max-width: 100%;
@@ -223,43 +97,44 @@ img {
     margin-left: 0;
     line-height: 1.3;
     transition: all 0.3s;
-}
 
-.hovers:hover {
-    background: none;
-    background: rgba(#050517,.8);
-
-    &:after,
     &:before {
-        opacity: 1;
+        @include vertical-align;
+        color: #FCFFF5;
+        text-decoration: none !important;
+        background-color: rgba(0,0,0,0);
+        display: block;
+        opacity: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
-}
 
-.hovers:before {
-    @include vertical-align;
-    color: #FCFFF5;
-    text-decoration: none !important;
-    background-color: rgba(0,0,0,0);
-    display: block;
-    opacity: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
+    &:after {
+        position: relative;
+        top: 36%;
+        display: block;
+        opacity: 0;
+        color: rgba(#fff, .8);
+        font-style: italic;
+        letter-spacing: 0.02em;
+    }
 
-.hovers:after {
-    position: relative;
-    top: 36%;
-    display: block;
-    opacity: 0;
-    color: rgba(#fff, .8);
-    font-style: italic;
-    letter-spacing: 0.02em;
+    &:hover {
+        background: none;
+        background: rgba(#050517,.8);
+
+        &:after,
+        &:before {
+            opacity: 1;
+        }
+    }
 }
 
 .col-sm-4 a {
     text-decoration: none;
 }
-@media screen and (max-width: 599px) {
+
+@include media-query($on-palm) {
     .hovers {
         background: none;
         background: rgba(#050517,.5);
@@ -282,10 +157,11 @@ img {
     margin: 7.5px -7.5px;
 }
 
-span.page-heading.pp {
+.page-heading {
     margin-top: 10px;
 }
-@media screen and (max-width: 600px) {
+
+@include media-query($on-palm) {
     .site-nav .menu-icon {
         padding: 5px 0;
     }
@@ -303,254 +179,5 @@ span.page-heading.pp {
 .post_img_hard {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
-// berlin presentation
-.berlin-prez {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
-    height: calc((100vw - 30px) * 566 / 800);
-    background-image: url('/images/berlin_sprite.jpg');
-    animation: berlin 10s steps(17, end) infinite;
-    background-size: auto 100%;
-    cursor: pointer;
-}
-@media (min-width: 768px) {
-    .berlin-prez {
-        height: 481.1px;
-    }
-}
 
-.berlin-prez:hover:after {
-    content: '';
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.05);
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.berlin-prez.active {
-    animation-play-state: paused;
-}
-@keyframes berlin {
-    0% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: calc(-17 * (100vw - 30px)) 0;
-    }
-}
-@media (min-width: 768px) {
-     @keyframes berlin{
-        0% {
-            background-position: 0 0;
-        }
-
-        100% {
-            background-position: calc(-17 * 680px) 0;
-        }
-    }
-}
-// history of GD animation
-@function pow($number, $exp) {
-    $value: 1;
-    @if $exp > 0 {
-         @for $i from 1 through $exp{
-            $value: $value * $number;
-        }
-    }
-    @else if $exp < 0 {
-         @for $i from 1 through -$exp{
-            $value: $value / $number;
-        }
-    }
-    @return $value;
-}
-@function fact($number) {
-    $value: 1;
-    @if $number > 0 {
-         @for $i from 1 through $number{
-            $value: $value * $i;
-        }
-    }
-    @return $value;
-}
-@function pi() {
-     @return 3.14159265359;
-}
-@function rad($angle) {
-    $unit: unit($angle);
-    $unitless: $angle / ($angle * 0 + 1);
-    // If the angle has 'deg' as unit, convert to radians.
-    @if $unit == deg {
-        $unitless: $unitless / 180 * pi();
-    }
-    @return $unitless;
-}
-@function sin($angle) {
-    $sin: 0;
-    $angle: rad($angle);
-    // Iterate a bunch of times.
-    @for $i from 0 through 10 {
-        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
-    }
-    @return $sin;
-}
-@function cos($angle) {
-    $cos: 0;
-    $angle: rad($angle);
-    // Iterate a bunch of times.
-    @for $i from 0 through 10 {
-        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
-    }
-    @return $cos;
-}
-@function tan($angle) {
-     @return sin($angle) / cos($angle);
-}
-@function one($exp) {
-     @return pow(-1, $exp % 2);
-}
-@function getbg($pg, $i) {
-    $c: 150 - one($i) * (50 + $i * 4);
-    @return rgba($c, $c, $c, .5);
-}
-$size: 250px;
-$angle: 30deg;
-$pages: 23;
-$scale: 0.4;
-$top: 80px;
-
-[class^=q] {
-    transition: transform 0.8s ease-in-out, background 0.8s ease-in-out, opacity 0.8s ease-in-out;
-    height: $size;
-    width: $size;
-    position: absolute;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    background-size: cover;
-
-    .zoomed &:after {
-        opacity: 0;
-    }
-}
-$pos: - $size * cos($angle);
-@for $n from 1 through $pages {
-    $angle: $angle + 1deg;
-    $pos: $pos + $size * cos($angle);
-    $bgtint: getbg($pages, $n);
-    $pageurl: '/images/acc/acc%20' + $n + '.jpeg';
-
-    .q#{$n} {
-        background-image: url($pageurl);
-        transform: scale3d($scale, $scale, $scale) translate3d($pos, $top, 0) rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, one($n) * $angle);
-
-        &:after {
-            transition: opacity 0.8s, background 0.15s;
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5;
-            background-color: $bgtint;
-        }
-
-        &:hover {
-            &:after {
-                background-color: darken($bgtint, 50%);
-                opacity: 0.5;
-            }
-        }
-
-        .zoomed &:after {
-            transition: opacity 0.15s, background 0.15s;
-        }
-    }
-}
-
-.q23 {
-    z-index: -10;
-    opacity: 0;
-}
-
-.accordeon-viewer {
-    transition: perspective 0.8s;
-    perspective: 600px;
-    width: 100%;
-    height: 300px;
-    background-color: $grey-color-light;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.bck {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-
-    &:after {
-        transition: opacity 0.5s ease-in-out;
-        content: 'Zoom out';
-        opacity: 0;
-        cursor: auto;
-    }
-}
-
-.zoomed .bck {
-    &:after {
-        opacity: 0.5;
-        cursor: pointer;
-        transition: opacity 0.15s ease-in-out;
-    }
-
-    &:hover {
-        &:after {
-            opacity: 1;
-        }
-    }
-}
-
-.accordeon-viewer {
-    .bckwd,
-    .fwd {
-        transition: opacity 0.5s ease-in-out;
-        z-index: 10;
-    }
-
-    .bckwd {
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 10%;
-        position: absolute;
-        opacity: 0.4;
-        background-image: linear-gradient(to right, rgba(black, .5), transparent);
-    }
-
-    .fwd {
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 10%;
-        position: absolute;
-        opacity: 0.4;
-        background-image: linear-gradient(to left, rgba(black, .5), transparent);
-    }
-
-    &.zoomed {
-        .bckwd,
-        .fwd {
-            opacity: 0;
-            z-index: -1;
-        }
-    }
-}
+@import "berlin", "hgd";

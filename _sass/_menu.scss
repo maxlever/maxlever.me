@@ -1,0 +1,58 @@
+
+
+.site-nav .trigger {
+    position: relative;
+    .page-link {
+        &:after {
+            display: none;
+        }
+        // &:active ~ #menu-line, &:focus ~ #menu-line {
+        //     height: .4rem;
+        // }
+    }
+}
+
+#menu-line {
+    position: absolute;
+    height: 1px;
+    background-color: $brand-color;
+    // width: 40px;
+    bottom: 18px;
+    // left: -1px;
+    transition: left 0.4s ease-in-out, width 0.4s ease-in-out, height .2s ease-in-out;
+}
+
+$rmargin: 20px;
+$h: 2px;
+$work-w: 40px;
+$work-l: -1px;
+$about-w: 41px;
+$about-l: $work-l + $work-w + $rmargin + $h;
+$resume-w: 52px;
+$resume-l: $about-l + $about-w + $rmargin + $h;
+
+
+a.page-link.work.active ~ #menu-line {
+    width: $work-w;
+    left: $work-l;
+}
+
+a.page-link.about.active ~ #menu-line {
+    width: $about-w;
+    left: $about-l;
+}
+
+a.page-link.work:hover ~ #menu-line {
+    width: $work-w;
+    left: $work-l;
+}
+
+a.page-link.about:hover ~ #menu-line {
+    width: $about-w;
+    left: $about-l;
+}
+
+a.page-link.resume:hover ~ #menu-line {
+    width: $resume-w;
+    left: $resume-l;
+}
