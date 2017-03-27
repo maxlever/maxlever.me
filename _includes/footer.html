@@ -5,16 +5,16 @@
     <div class="footer-col-wrapper">
       <div class="footer-col">
             {% if site.email %}
-            <a target="_blank" href="mailto:{{ site.email }}">email</a> –
+            <a target="_blank" id="bla1" href="mailto:{{ site.email }}">email</a> –
             {% endif %}
             {% if site.github_username %}
-            <a target="_blank" href="https://github.com/{{ site.github_username }}">github</a> –
+            <a target="_blank" id="bla2" href="https://github.com/{{ site.github_username }}">github</a> –
             {% endif %}
             {% if site.devpost_username %}
-            <a target="_blank" href="https://devpost.com/{{ site.devpost_username }}">devpost</a> –
+            <a target="_blank" id="bla3" href="https://devpost.com/{{ site.devpost_username }}">devpost</a> –
             {% endif %}
             {% if site.linkedin_username %}
-            <a target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}">
+            <a target="_blank" id="bla4" href="https://linkedin.com/in/{{ site.linkedin_username }}">
               <!-- <span class="icon  icon--twitter">
                 <svg viewBox="0 0 144 144">
                   <path fill="#828282" d="M133.3,0H10.6C4.8,0,0,4.6,0,10.4v123.2c0,5.7,4.8,10.4,10.6,10.4h122.7c5.9,0,10.7-4.7,10.7-10.4V10.4
@@ -27,6 +27,7 @@
               <span class="username">linkedin</span>
             </a>
             {% endif %}
+            <div id="footer-menu-line"></div>
       </div>
 
     </div>
