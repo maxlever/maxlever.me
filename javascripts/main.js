@@ -30,6 +30,14 @@ function ajaxify() {
 				$('.home').attr('class', $newPage.find('.home').attr('class'));
 			} else {
 				$oldPage.html($newPage.filter('.page-content').children());
+				$('.page-content').attr('data-page', $newPage.filter('.page-content').attr('data-page'));
+				if ($('.page-content').attr('data-page') == "About") {
+					$('.page-link').removeClass("active");
+					$('.page-link.about').addClass("active");
+				} else {
+					$('.page-link').removeClass("active");
+					$('.page-link.work').addClass("active");
+				}
 			}
 			ga('send', 'pageview', State.url);
 		}).done(function () {

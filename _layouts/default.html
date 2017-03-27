@@ -7,7 +7,7 @@
 
     {% include header.html %}
 
-    <div class="page-content">
+    <div class="page-content" data-page="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
       <div class="wrapper">
         {{ content }}
       </div>
