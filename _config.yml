@@ -3,11 +3,11 @@ baseurl: /
 title: Max Lever
 email: maxlever@ccs.neu.edu
 description: |
-  I'm a French-American student in my 4th year at Northeastern University, in Boston, where I study Computer Science and Interactive Media. I've also taken courses in political science and philosophy at Sciences Po Paris. My interests are at the confluence of design, technology, and social impact. I spend my time analyzing systems, whether they are graphic, technological, philosophical, or political. My practical experience includes design thinking, software development, interaction design, and interactive art.
-
-  Otherwise, I occupy myself by reading philosophical novels, drawing convoluted diagrams, or making lists; usually while eating crunchy bread.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://maxlever.me" # the base hostname & protocol for your site
+  I'm a French-American student at Northeastern University, where I study Computer Science and Interactive Media. I've also taken courses in political science and philosophy at Sciences Po in Paris. I enjoy analyzing and building systems, whether they are graphic, technical, or conceptual.
+  
+  Currently, I'm working at the MIT Media Lab designing a web interface for Machine Learning sentiment analysis.
+baseurl: ""
+url: "http://maxlever.me"
 linkedin_username: maxlever
 github_username:  maxlever
 devpost_username: maxlever
