@@ -221,7 +221,7 @@ html, body {
     display: block;
     font-size: 24px;
 }
-.post-content a, .site-footer a, .page-link {
+.post-content a, .page-link {
     &::after {
         content: '';
         background-color: $brand-color;
@@ -246,7 +246,7 @@ html, body {
         }
     }
 }
-.site-footer a::after, .page-link::after {
+.page-link::after {
     bottom: 0;
 }
 .post-content a {

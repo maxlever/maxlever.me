@@ -1,0 +1,40 @@
+.footer-col {
+    position: relative;
+    a {
+        cursor: pointer;
+    }
+    a:after {
+        display: none;
+    }
+
+    #footer-menu-line {
+        position: absolute;
+        height: 1px;
+        background-color: $brand-color;
+        width: 35px;
+        top: 22px;
+        left: 0px;
+        transition: left 0.4s ease-in-out, width 0.4s ease-in-out, opacity .15s ease-in-out;
+        opacity: 0;
+    }
+
+
+    a:hover ~ #footer-menu-line {
+        opacity: 1;
+    }
+}
+
+$rmargin: 11px;
+$h: 2px;
+$fw: 35px, 42px, 49px, 53px;
+$fl: 15px;
+
+@for $i from 1 through 3 {
+    $fl: append($fl, nth($fl, $i) + (nth($fw, $i) + $rmargin + $h));
+}
+@for $i from 1 through 4 {
+    a#bla#{$i}:hover ~ #footer-menu-line {
+        width: nth($fw,$i);
+        left: nth($fl,$i);
+    }
+}
