@@ -41,7 +41,7 @@ function ajaxify() {
 			}
 			ga('send', 'pageview', State.url);
 		}).done(function () {
-			// new page
+			page();
 		});
 	});
 }
@@ -120,10 +120,10 @@ function page() {
     $('[class^=q]').click(clickToScroll);
     $('.bck').click(goBack(0));
 
-    var lastX;
-    var startTime;
-    var lastTouchTime;
-    var acceleration;
+    var lastX = null;
+    var startTime = null;
+    var lastTouchTime = null;
+    var acceleration = null;
     var momentum = 1;
 
     $('.accordeon-viewer').bind('touchstart', function(e) {
@@ -163,7 +163,7 @@ function page() {
         }
     }
 
-    var intervalId;
+    var intervalId = null;
     $('.fwd, .bckwd').hover(function () {
         if (zoomedOut) {
             var intervalDelay = 10;
