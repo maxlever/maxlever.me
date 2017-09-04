@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 //	HISTORICIZE AND AJAXIFY OUR SITE
 function ajaxify() {
-	var siteUrl = 'http://'+(document.location.hostname||document.location.host);
+	var siteUrl = 'https://'+(document.location.hostname||document.location.host);
 
 	//	Catch all internally-focused links and push a new state.
 	//	Note: External links will not be affected by this behavior.
