@@ -15,7 +15,7 @@
         {% if post.categories contains include.cat %}
         <div class="col-sm-4"><a href="{{ post.url }}">
         <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
-        background-image: url({{ "/images/" | append:post.title | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
+        background-image: url({{ "/images/" | append:post.title | downcase | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});
                 ">
         <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
         </div></div>
