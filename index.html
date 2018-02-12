@@ -15,12 +15,15 @@ layout: default
   <div class="row projects">
     {% for post in site.posts %}
     {% unless post.categories contains 'games' %}
-            <div class="col-sm-4"><a href="{{ post.url }}">
-    <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
-background-image: url({{ "/images/" | append:post.title | downcase | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});">
-    <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
-    </div></div>
-    </a></div>
+    <div class="col-sm-4">
+        <a href="{{ post.url }}">
+            <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
+                        background-image: url({{ "/images/" | append:post.title | downcase | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});">
+                <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
+                </div>
+            </div>
+        </a>
+    </div>
     {% endunless %}
     {% endfor %}
 
