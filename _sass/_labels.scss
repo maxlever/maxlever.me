@@ -17,8 +17,8 @@ $h: 0px; // horizontal padding
     background-color: #b3b39f;
     display: block;
     content: '';
-    height: calc(100% + #{$v});
-    top: calc(#{$v} * -.5);
+    height: calc(100%);// + #{$v});
+    top: 0px;//calc(#{$v} * -.5);
     position: absolute;
     transition: left 0.4s ease-in-out, width 0.4s ease-in-out;
 }
