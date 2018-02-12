@@ -311,11 +311,27 @@ html, body {
     }
 }
 
-.projects > div:nth-child(4n+1) {
+.home--all .projects > div:nth-child(4n+1) {
     margin-right: 232px;
     margin-bottom: 229px;
 }
 
-.projects > div:nth-child(2n+4) {
+.home--all .projects > div:nth-child(2n+4) {
+    margin-left: 232px;
+}
+
+.home--artdesign .projects > div:nth-child(4n+2) {
+    margin-right: 232px;
+    margin-bottom: 229px;
+}
+.home--artdesign .projects > div:nth-child(2n+1) {
+    margin-left: 232px;
+}
+
+.home--dev .projects > div:nth-child(4n+3) {
+    margin-right: 232px;
+    margin-bottom: 229px;
+}
+.home--dev .projects > div:nth-child(2n+3) {
     margin-left: 232px;
 }
