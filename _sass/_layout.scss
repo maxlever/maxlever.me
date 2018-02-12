@@ -304,10 +304,18 @@ html, body {
     }
 }
 
-
 [class^="col-"] {
     margin-bottom: 0;
     @include media-query($on-laptop) {
         margin-bottom: 15px;
     }
+}
+
+.projects > div:nth-child(4n+1) {
+    margin-right: 232px;
+    margin-bottom: 229px;
+}
+
+.projects > div:nth-child(2n+4) {
+    margin-left: 232px;
 }
