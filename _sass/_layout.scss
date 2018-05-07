@@ -310,32 +310,33 @@ html, body {
         margin-bottom: 15px;
     }
 }
+@media screen and (min-width: $on-palm) {
+    .home--all .projects > div:nth-child(4n+1) {
+        margin-right: 232px;
+        margin-bottom: 229px;
+    }
 
-.home--all .projects > div:nth-child(4n+1) {
-    margin-right: 232px;
-    margin-bottom: 229px;
-}
+    .home--all .projects > div:nth-child(2n+4) {
+        margin-left: 232px;
+    }
 
-.home--all .projects > div:nth-child(2n+4) {
-    margin-left: 232px;
-}
+    .home--artdesign .projects > div:nth-child(4n+2) {
+        margin-right: 232px;
+        margin-bottom: 229px;
+    }
+    .home--artdesign .projects > div:nth-child(2n+1) {
+        margin-left: 232px;
+    }
 
-.home--artdesign .projects > div:nth-child(4n+2) {
-    margin-right: 232px;
-    margin-bottom: 229px;
-}
-.home--artdesign .projects > div:nth-child(2n+1) {
-    margin-left: 232px;
-}
+    .home--dev .projects > div:nth-child(4n+3) {
+        margin-right: 232px;
+        margin-bottom: 229px;
+    }
+    .home--dev .projects > div:nth-child(2n+3) {
+        margin-left: 232px;
+    }
 
-.home--dev .projects > div:nth-child(4n+3) {
-    margin-right: 232px;
-    margin-bottom: 229px;
-}
-.home--dev .projects > div:nth-child(2n+3) {
-    margin-left: 232px;
-}
-
-[data-page="we are all in the same boat"] .row > div:nth-child(2) {
-    margin-top: 10em;
+    [data-page="we are all in the same boat"] .row > div:nth-child(2) {
+        margin-top: 10em;
+    }
 }
