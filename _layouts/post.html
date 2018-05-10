@@ -20,12 +20,11 @@ layout: default
 <article class="post-content" data-page="{{ page.title }}">
 {{ content }}
 <p>
-
-  {% if page.next.url %}
-    <a style="float:left;" class="next" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
+  {% if page.next.next.url %}
+    <a style="float:left;" class="next" href="{{page.next.next.url}}">&laquo; {{page.next.next.title}}</a>
   {% endif %}
-  {% if page.previous.url %}
-    <a style="float:right;" class="prev" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
+  {% if page.previous.previous.url %}
+    <a style="float:right;" class="prev" href="{{page.previous.previous.url}}">{{page.previous.previous.title}} &raquo;</a>
   {% endif %}
 </p>
 </article>

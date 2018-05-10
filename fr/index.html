@@ -1,7 +1,8 @@
 ---
 layout: default
-title: homefr
-permalink: /
+title: home
+ref: home
+permalink: fr/
 lang: fr
 ---
 
@@ -10,6 +11,7 @@ lang: fr
 </div>
   <div class="row projects">
     {% for post in site.posts %}
+    {% if post.lang == "fr" %}
     <div class="col-sm-4">
         <a href="{{ post.url }}">
             <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
@@ -19,11 +21,13 @@ lang: fr
             </div>
         </a>
     </div>
+    {% endif %}
     {% endfor %}
 
     <style type="text/css">
 
     {% for post in site.posts %}
+    {% if post.lang == "fr" %}
         {% assign title = post.title | replace:' ','' %}
         .{{ title }}:before {
             content: "{{ post.title }}";
@@ -34,6 +38,7 @@ lang: fr
             content: "{{ post.info }}";
             text-decoration: none !important;
         }
+    {% endif %}
     {% endfor %}
     </style>
 
