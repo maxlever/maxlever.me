@@ -2,13 +2,6 @@
 <div class="home home--{{ include.cat }}">
 
 <div class="page-heading">
-    <span class="labels" style="float:right;">
-        <a href="/dev" class="label label-info dev {% if include.cat == 'dev' %}active{% endif %}">development</a>
-        <a href="/art+design" class="label label-success artdesign {% if include.cat == 'artdesign' %}active{% endif %}">design</a>
-        <a href="/" class="label label-default all">all</a>
-        <span class="label-bg"></span>
-    </span>
-    <small style="float:right;">filter:&nbsp;&nbsp;</small>
 </div>
   <div class="row projects">
     {% for post in site.posts %}

@@ -6,15 +6,6 @@ layout: default
   <header class="post-header">
     <h1>
       <span class="post-title">{{ page.title }}</span>
-      <span class="page-heading pp" style="float:right;">
-        {% if page.categories contains "dev" %}
-        <a href="/dev" class="label dev">development</a>
-        {% elsif page.categories contains "games" %}
-        <a href="/games" class="label games">games</a>
-        {% else %}
-        <a href="/design" class="label artdesign">design</a>
-        {% endif %}
-      </span>
     </h1>
     <p class="post-meta">
       {{ page.datedisp }}
@@ -24,10 +15,6 @@ layout: default
     margin-bottom: 0;
   }
 </style>
-    <!-- <p class="post-meta">
-    {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-  </p>
-  -->
 </header>
 
 <article class="post-content" data-page="{{ page.title }}">
@@ -35,22 +22,10 @@ layout: default
 <p>
 
   {% if page.next.url %}
-  {% if page.categories contains 'games' %}
     <a style="float:left;" class="next" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
-  {% else %}
-  {% unless page.next.categories contains 'games' %}
-    <a style="float:left;" class="next" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
-  {% endunless %}
-  {% endif %}
   {% endif %}
   {% if page.previous.url %}
-  {% if page.categories contains 'games' %}
     <a style="float:right;" class="prev" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
-  {% else %}
-  {% unless page.previous.categories contains 'games' %}
-    <a style="float:right;" class="prev" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
-  {% endunless %}
-  {% endif %}
   {% endif %}
 </p>
 </article>
