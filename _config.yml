@@ -32,11 +32,11 @@ devpost_username: maxlever
 markdown: kramdown
 
 # multilang support
-gems:
-  - jekyll-polyglot
-plugins:
-  - jekyll-polyglot
+# gems:
+#   - jekyll-polyglot
+# plugins:
+#   - jekyll-polyglot
 languages: ["en", "fr"]
 default_lang: "en"
 exclude_from_localization: ["javascripts", "images", "css"]
-parallel_localization: true
+# parallel_localization: true

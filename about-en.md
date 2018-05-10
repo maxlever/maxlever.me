@@ -1,10 +1,8 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: about
 lang: en
 ---
 
-{{ site.active_lang }}
-{{ site.default_lang }}
 {{ site.description }}

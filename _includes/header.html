@@ -15,13 +15,13 @@
 
       <div class="trigger">
           <a class="page-link work {% if page.title != 'About' %}active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">
-              {% if site.active_lang == "en" %}work{% else %}projets{% endif %}
+              {% if page.lang == "en" %}work{% else %}projets{% endif %}
           </a>
           <a class="page-link about {% if page.title == 'About' %}active{% endif %}" href="{{ '/about' | prepend: site.baseurl }}">
-              {% if site.active_lang == "en" %}about{% else %}à propos{% endif %}
+              {% if page.lang == "en" %}about{% else %}à propos{% endif %}
           </a>
           <a class="page-link resume" target="_blank" href="https://www.dropbox.com/s/9dxp347qgabsjnb/MaxLeverResume.pdf?raw=1">
-              {% if site.active_lang == "en" %}résumé{% else %}CV{% endif %}
+              {% if page.lang == "en" %}résumé{% else %}CV{% endif %}
           </a>
           <div id="menu-line"></div>
       </div>

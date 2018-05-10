@@ -1,7 +1,8 @@
 ---
 layout: default
-title: home
-lang: en
+title: homefr
+permalink: /
+lang: fr
 ---
 
 <div class="home home--all">
@@ -9,15 +10,15 @@ lang: en
 </div>
   <div class="row projects">
     {% for post in site.posts %}
-        <div class="col-sm-4">
-            <a href="{{ post.url }}">
-                <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
-                            background-image: url({{ "/images/" | append:post.title | downcase | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});">
-                    <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
-                    </div>
+    <div class="col-sm-4">
+        <a href="{{ post.url }}">
+            <div class="{{ post.title | replace:' ','' | append: 'parent'}} col-inner" style="
+                        background-image: url({{ "/images/" | append:post.title | downcase | replace:' ','' | append:'1low.jpg' | prepend: site.baseurl }});">
+                <div class="hovers {{ post.categories }} {{ post.title | replace:' ',''}}">
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
+    </div>
     {% endfor %}
 
     <style type="text/css">
