@@ -5,4 +5,5 @@ permalink: /about/
 lang: fr
 ---
 
+({{ site.active_lang }})
 {{ site.description-fr }}
