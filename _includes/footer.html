@@ -3,7 +3,17 @@
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
-      <span class="footer-lang">language: (<a href="/">en</a>/<a href="/fr">fr</a>)</span>
+        {% if page.ref == "home" %}
+        {% assign ref = "" %}
+        {% else %}
+        {% assign ref = page.ref %}
+        {% endif %}
+      <span class="footer-lang">language: (
+          <a href="/{{ref}}">en</a>
+          /
+          <a href="/fr/{{ref}}">fr</a>
+          )
+      </span>
       <div class="footer-col">
             {% if site.email %}
             <a target="_blank" id="bla1" href="mailto:{{ site.email }}">email</a> –
