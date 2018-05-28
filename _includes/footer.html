@@ -8,11 +8,16 @@
         {% else %}
         {% assign ref = page.ref %}
         {% endif %}
-      <span class="footer-lang">language: (
-          <a href="/{{ref}}">en</a>
-          /
-          <a href="/fr/{{ref}}">fr</a>
-          )
+      <span class="footer-lang">
+          ({% if page.lang == 'fr'%}
+          switch to <a href="/{{ref}}" class="en">
+            english
+          </a>
+          {% else %}
+          poursuivre <a href="/fr/{{ref}}" class="fr">
+            en français
+          </a>
+          {% endif %})
       </span>
       <div class="footer-col">
             {% if site.email %}
