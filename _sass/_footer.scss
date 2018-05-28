@@ -42,3 +42,9 @@ $fl: 15px;
 .footer-lang {
     margin-left: 15px;
 }
+.footer-lang .en:lang(en), .footer-lang .fr:lang(fr){
+    font-style: italic;
+    // user-select: none;
+    // cursor: default;
+    // color: $grey-color;
+}
