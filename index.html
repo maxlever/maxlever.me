@@ -9,6 +9,15 @@ lang: en
 <div class="page-heading">
 </div>
   <div class="row projects">
+      <div class="col-sm-4">
+          <a href="/about">
+              <div class="aboutparent col-inner" style="
+                          background-image: url(/images/portrait4.jpeg);">
+                  <div class="hovers artdesign about">
+                  </div>
+              </div>
+          </a>
+      </div>
     {% for post in site.posts %}
     {% if post.lang == "en" %}
         <div class="col-sm-4">
@@ -39,6 +48,11 @@ lang: en
         }
     {% endif %}
     {% endfor %}
+    @media (max-width: 800px) {
+        .hovers.about {
+            display: none;
+        }
+    }
     </style>
 
   </div>
