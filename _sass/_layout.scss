@@ -286,29 +286,18 @@ html, body {
     }
 }
 @media screen and (min-width: $on-palm) {
-    .home--all .projects > div:nth-child(4n+1) {
+    .home--all .projects > div:nth-child(1) {
         margin-right: 232px;
         margin-bottom: 229px;
     }
-
+    .home--all .projects > div:nth-child(5) {
+        margin-right: 232px;
+    }
     .home--all .projects > div:nth-child(2n+4) {
         margin-left: 232px;
     }
-
-    .home--artdesign .projects > div:nth-child(4n+2) {
-        margin-right: 232px;
-        margin-bottom: 229px;
-    }
-    .home--artdesign .projects > div:nth-child(2n+1) {
-        margin-left: 232px;
-    }
-
-    .home--dev .projects > div:nth-child(4n+3) {
-        margin-right: 232px;
-        margin-bottom: 229px;
-    }
-    .home--dev .projects > div:nth-child(2n+3) {
-        margin-left: 232px;
+    .home--all .projects > div:nth-child(6) {
+        margin-left: 464px;
     }
 
     [data-page="we are all in the same boat"] .row > div:nth-child(2) {
