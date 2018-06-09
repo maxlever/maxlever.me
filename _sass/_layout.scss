@@ -24,6 +24,8 @@ html, body {
     line-height: 56px;
     margin-bottom: 0;
     float: left;
+    position: relative;
+
     & .page-link {
         color: $grey-color-dark;
         &:after {
@@ -37,8 +39,14 @@ html, body {
 
     @include media-query($on-palm) {
         width: 100%;
+<<<<<<< HEAD
         padding-bottom: 120px;
+=======
+>>>>>>> tweaks
         border-bottom: 1px solid $grey-color-light;
+        [data-ref="home"] & {
+            padding-bottom: 120px;
+        }
     }
 }
 
@@ -48,15 +56,20 @@ html, body {
     font-style: normal;
     line-height: 1;
     /* letter-spacing: 0px; */
-    max-width: 458px;
+    width: 458px;
     top: 46px;
+    left: 0;
     color: $grey-color-dark;
     body:not([data-ref="home"]) & {
         display: none;
     }
+    html[lang=fr] & {
+        content: "Cherche à retrouver dans la technologie une tangibilité sous-jacente qui a pu être diminuée par les intéractions virtuelles.";
+    }
     @include media-query($on-palm) {
         position: absolute;
-        left: 15px;
+        width: auto;
+        left: 0;
     }
 }
 .site-nav {
@@ -141,7 +154,7 @@ html, body {
 @include media-query($on-palm) {
     .hovers {
         background: none;
-        background: rgba(#EAFDF8,.5);
+        background: rgba(#EAFDF8,.7);
     }
     .hovers:before {
         opacity: 1;
