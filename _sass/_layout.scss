@@ -37,7 +37,7 @@ html, body {
 
     @include media-query($on-palm) {
         width: 100%;
-        padding-bottom: 80px;
+        padding-bottom: 120px;
         border-bottom: 1px solid $grey-color-light;
     }
 }
