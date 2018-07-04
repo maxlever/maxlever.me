@@ -39,10 +39,7 @@ html, body {
 
     @include media-query($on-palm) {
         width: 100%;
-<<<<<<< HEAD
         padding-bottom: 120px;
-=======
->>>>>>> tweaks
         border-bottom: 1px solid $grey-color-light;
         [data-ref="home"] & {
             padding-bottom: 120px;
