@@ -106,7 +106,7 @@ html, body {
     height: $tile-height;
     margin-left: 0;
     line-height: 1.3;
-    transition: all 0.3s;
+    transition: all 0.35s ease-in-out;
     &:before {
         @include vertical-align;
         color: $grey-color-dark;
@@ -309,6 +309,48 @@ html, body {
     .home--all .projects > div:nth-child(6) {
         margin-left: 464px;
     }
+    .home--all .projects > div {
+        transition: transform .35s ease-in-out;
+    }
+    .projects {
+        perspective: 1000px;
+    }
+    $elements: 7;
+
+    @for $i from 0 to $elements {
+        $range: 2;
+        $min: 3;
+        $amount: rand-1() * ($min + random($range)) * 1deg;
+
+        .home--all .projects>div:nth-child(#{$i}) {
+            $x: rand-1();
+            $y: rand-1();
+            $z: rand-1();
+            transform-origin: center center 0px;
+            transform: rotate3d(0, 0, 0, 0deg);
+            perspective: 1000px;
+
+            &:hover {
+                transform-style: preserve-3d;
+                // transform: rotateY($amount + deg);
+                transform: matrix3d(
+                    cos($amount), 0, sin($amount), 0,
+                    0.00, 1, 0.00, 0,
+                    - sin($amount), 0, cos($amount), 0,
+                    0, 0, 0, 1);
+
+                .hovers {
+                    // transform: rotateY(- $amount + deg);
+                    transform: matrix3d(
+                        cos($amount), 0, - sin($amount), 0,
+                        0, 1, 0, 0,
+                        sin($amount), 0, cos($amount), 0,
+                        0, 0, 0, 1);
+                }
+            }
+        }
+    }
+
 
     [data-page="we are all in the same boat"] .row > div:nth-child(2) {
         margin-top: 10em;
