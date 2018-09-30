@@ -334,10 +334,8 @@ html, body {
                         0, 0, 1, 0,
                         0, 0, 0, 1);
             perspective: 1000px;
-            transition: transform .35s ease-in-out;
 
             .hovers {
-                transition: transform .35s ease-in-out;
                 transform: matrix3d(
                         1, 0, 0, 0,
                         0, 1, 0, 0,
@@ -355,7 +353,6 @@ html, body {
 
                 .hovers {
                     // transform: rotateY(- $amount + deg);
-                    transition: transform .35s ease-in-out;
                     transform: matrix3d(
                         cos($amount), 0, - sin($amount), 0,
                         0, 1, 0, 0,
