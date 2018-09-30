@@ -309,8 +309,8 @@ html, body {
     .home--all .projects > div:nth-child(6) {
         margin-left: 464px;
     }
-    .home--all .projects > div {
-        transition: transform .35s ease-in-out;
+    .home--all .projects * {
+        transition: all .35s ease-in-out;
     }
     .projects {
         perspective: 1000px;
@@ -327,11 +327,25 @@ html, body {
             $y: rand-1();
             $z: rand-1();
             transform-origin: center center 0px;
-            transform: rotate3d(0, 0, 0, 0deg);
+            transform-style: preserve-3d;   
+            transform: matrix3d(
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1);
             perspective: 1000px;
+            transition: transform .35s ease-in-out;
+
+            .hovers {
+                transition: transform .35s ease-in-out;
+                transform: matrix3d(
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1);
+            }
 
             &:hover {
-                transform-style: preserve-3d;
                 // transform: rotateY($amount + deg);
                 transform: matrix3d(
                     cos($amount), 0, sin($amount), 0,
@@ -341,6 +355,7 @@ html, body {
 
                 .hovers {
                     // transform: rotateY(- $amount + deg);
+                    transition: transform .35s ease-in-out;
                     transform: matrix3d(
                         cos($amount), 0, - sin($amount), 0,
                         0, 1, 0, 0,
