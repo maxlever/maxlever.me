@@ -61,7 +61,7 @@ html, body {
         display: none;
     }
     html[lang=fr] & {
-        content: "Cherche à retrouver dans la technologie une tangibilité sous-jacente qui a pu être diminuée par les intéractions virtuelles.";
+        content: "artiste et ingénieur logiciel explorant les intersections entre éthique, technologie et créativité";
     }
     @include media-query($on-palm) {
         position: absolute;
@@ -315,11 +315,11 @@ html, body {
     .projects {
         perspective: 1000px;
     }
-    $elements: 7;
+    $elements: 9;
 
     @for $i from 0 to $elements {
-        $range: 2;
-        $min: 3;
+        $range: 1;
+        $min: 2;
         $amount: rand-1() * ($min + random($range)) * 1deg;
 
         .home--all .projects>div:nth-child(#{$i}) {
@@ -327,7 +327,7 @@ html, body {
             $y: rand-1();
             $z: rand-1();
             transform-origin: center center 0px;
-            transform-style: preserve-3d;   
+            transform-style: preserve-3d;
             transform: matrix3d(
                         1, 0, 0, 0,
                         0, 1, 0, 0,
@@ -344,20 +344,26 @@ html, body {
             }
 
             &:hover {
-                // transform: rotateY($amount + deg);
-                transform: matrix3d(
-                    cos($amount), 0, sin($amount), 0,
-                    0.00, 1, 0.00, 0,
-                    - sin($amount), 0, cos($amount), 0,
-                    0, 0, 0, 1);
+                transform: rotateY(rand-1() * ($min + random($range)) * 1deg) rotateZ(rand-1() * ($min + random($range)) * 1deg);// rotateZ(rand-1() * ($min + random($range)) * 1deg);
+                // transform: matrix3d(
+                //     cos(rand-1() * ($min + random($range)) * 1deg), - sin(rand-1() * ($min + random($range)) * 1deg), sin(rand-1() * ($min + random($range)) * 1deg), 0,
+                //     sin(rand-1() * ($min + random($range)) * 1deg), cos(rand-1() * ($min + random($range)) * 1deg), - sin(rand-1() * ($min + random($range)) * 1deg), 0,
+                //     - sin(rand-1() * ($min + random($range)) * 1deg), sin(rand-1() * ($min + random($range)) * 1deg), cos(rand-1() * ($min + random($range)) * 1deg), 0,
+                //     0,0,0,0);
+                    // matrix3d(
+                    // cos($amount), 0, sin($amount), 0,
+                    // 0.00, 1, 0.00, 0,
+                    // - sin($amount), 0, cos($amount), 0,
+                    // 0, 0, 0, 1);
 
                 .hovers {
+                    
                     // transform: rotateY(- $amount + deg);
-                    transform: matrix3d(
-                        cos($amount), 0, - sin($amount), 0,
-                        0, 1, 0, 0,
-                        sin($amount), 0, cos($amount), 0,
-                        0, 0, 0, 1);
+                    // matrix3d(
+                    // cos($amount), 0, - sin($amount), 0,
+                    // 0, 1, 0, 0,
+                    // sin($amount), 0, cos($amount), 0,
+                    // 0, 0, 0, 1);
                 }
             }
         }
