@@ -2,16 +2,12 @@
 baseurl: /
 title: Max Lever
 email: maxdavidlever@gmail.com
-description: |
-  Hello! I'm a French-American artist, designer, and developer. I currently work as lead software engineer at Artmatr, building full-stack robotic printing systems. Previously I was a contractor for metaLAB (at) Harvard, where I developed art installations regarding AI ethics, and the MIT Media Lab, where I built design tools for connecting concepts and provoking new ideas, and designed an AI-based interface for computing the emotional content of sentences.
-
-  I am a graduate of Northeastern University, where I studied computer science, interactive media, and philosophy. I've also taken courses in political science and philosophy at Sciences Po in Paris.
-
-  Knowing several systems—web technologies, design systems, cultures—from the inside and the outside, allows me to reveal them, make them legible.
-
-  Most critically, I hope to recover an underlying physicality in technology that can be diminished in virtual interactions. The smartphone, which my generation checks 150 times daily, has replaced many processes that formerly involved physical interactions (postman, teller, etc.). In this environment, the dominant paradigm represents human experience and people as metrics, and it is easier to harm when others are just numbers. My goal is to create art that uses the medium of technology to remind us of our own physicality while revealing how technology structures our behavior.
-
-  I'm seeking new collaborations. If you're interested in building creative and critical technologies, reach me at maxdavidlever[at]gmail.com.
+description: 
+  <p>Hello! I'm a French-American artist, designer, and developer. I currently work as lead software engineer at <a href='http://artmatr.co'>Artmatr</a>, building full-stack robotic printing systems. Previously I was a contractor for <a href='http://metalab.harvard.edu'>metaLAB (at) Harvard</a>, where I developed art installations regarding AI ethics, and the <a href='http://media.mit.edu'>MIT Media Lab</a>, where I built design tools for connecting concepts and provoking new ideas, and designed an AI-based interface for computing the emotional content of sentences.</p>
+  <p>I am a graduate of Northeastern University, where I studied computer science, interactive media, and philosophy. I've also taken courses in political science and philosophy at Sciences Po in Paris.</p>
+  <p>Knowing several systems—web technologies, design systems, cultures—from the inside and the outside, allows me to reveal them, make them legible.</p>
+  <p>Most critically, I hope to recover an underlying physicality in technology that can be diminished in virtual interactions. The smartphone, which my generation checks 150 times daily, has replaced many processes that formerly involved physical interactions (postman, teller, etc.). In this environment, the dominant paradigm represents human experience and people as metrics, and it is easier to harm when others are just numbers. My goal is to create art that uses the medium of technology to remind us of our own physicality while revealing how technology structures our behavior.</p>
+  <p>I'm seeking new collaborations. If you're interested in building creative and critical technologies, reach me at maxdavidlever[at]gmail.com.</p>
 description-fr: |
   Artiste, designer graphique, et ingénieur logiciel franco-américain, j'ai obtenu un Bachelor of Science en informatique, design intéractif et philosophie morale de l'université Northeastern à Boston. J'ai également suivi des cours à Sciences Po Paris.
 
