@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/maxlever
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://maxlever.me
+  * I am maxlever (https://keybase.io/maxlever) on keybase.
+  * I have a public key ASDZ-2l6hjEem6csSwrdUzPv3NW3Nw0Fb5lYXw3AuALezQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d9fb697a86311e9ba72c4b0add5333efdcd5b7370d056f99585f0dc0b802decd0a",
+      "host": "keybase.io",
+      "kid": "0120d9fb697a86311e9ba72c4b0add5333efdcd5b7370d056f99585f0dc0b802decd0a",
+      "uid": "852e561a3b128063b3ce37ebef9fcf19",
+      "username": "maxlever"
+    },
+    "merkle_root": {
+      "ctime": 1566916122,
+      "hash": "2df626e4b49ddf4c6035ade9c248aae5fdc156df4b24e202ee2327de0f85078e22c22dc13c6d01694b924222d9176d28d641b641958af536f1edb0f7231b77c4",
+      "hash_meta": "a0e2983c7fc57ebceb482f3e890cbf08828f6c401cdbe32b1da70e15a77ae75e",
+      "seqno": 6110011
+    },
+    "service": {
+      "entropy": "52Z+4uavBhzBHZRxwcD5zRsu",
+      "hostname": "maxlever.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.3.2"
+  },
+  "ctime": 1566916132,
+  "expire_in": 504576000,
+  "prev": "28d91b870bbb14f32754b41e640d8459e2911a158972725e7ccf5d340670f8e6",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg2ftpeoYxHpunLEsK3VMz79zVtzcNBW+ZWF8NwLgC3s0Kp3BheWxvYWTESpcCC8QgKNkbhwu7FPMnVLQeZA2EWeKRGhWJcnJefM9dNAZw+ObEICQA0Z6gHpD6rxzGNtI4EqR1/WwoSxydxAz97QQ+/KfUAgHCo3NpZ8RAHAgnm7mlqQjv0YQlJQo/Rgz7tmgQb84tsjBU3xSY7f88mTG2HaQpyYjvND6Jj5dYg7iNV1lvM5XI7fIUCiS+CahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHnTKFM8PPBfxZ+QU32Vl3sSgkoVEmsZLxtK59qtVp9io3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/maxlever
+
+==================================================================
