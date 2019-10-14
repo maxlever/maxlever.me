@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: darken($brand-color, 20%);
     text-decoration: none;
     position: relative;
 
@@ -95,7 +95,7 @@ a {
         text-decoration: none;
     }
     &:active, &:focus, &:hover {
-        color: $brand-color;
+        color: lighten($brand-color, 10%);
         // color: lighten($brand-color, 30%);
         text-decoration: none;
     }
