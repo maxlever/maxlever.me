@@ -23,6 +23,12 @@
             margin: 20px;
             padding: 20px;
             background: #ddd;
+            position: relative;
+        }
+        main > div > span {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
         }
         .sidebar {
             grid-area: sidebar;
@@ -38,6 +44,9 @@
         .code {
             grid-area: code;
             font-family: 'Courier New', Courier, monospace;
+        }
+        .code pre {
+            white-space: pre-wrap;
         }
 
     </style>
