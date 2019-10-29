@@ -7,22 +7,55 @@
     <title>Axios Caching Test</title>
 </head>
 <body>
+    <style>
+        body, html { margin: 0; padding: 0; }
+        main {
+            display: grid;
+            grid-template-columns: 20vw 80vw;
+            grid-template-rows: 20vh 50vh 30vh;
+            grid-template-areas: 'header header'
+                                 'sidebar article'
+                                 'sidebar code';
+            height: 100vh;
+            width: 100vw;
+        }
+        main > div {
+            margin: 20px;
+            padding: 20px;
+            background: #ddd;
+        }
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .header {
+            grid-area: header;
+        }
+        .article {
+            grid-area: article;
+        }
+
+        .code {
+            grid-area: code;
+        }
+
+    </style>
     <main>
-        <div>
+        <div class="header">
             <esi-header>This is the header</esi-header>
             <span>TTL: 20s</span>
         </div>
-        <div>
+        <div class="sidebar">
             <esi-sidebar>This is the sidebar</esi-sidebar>
             <span>TTL: 10s</span>
         </div>
-        <div>
+        <div class="article">
             <esi-article>This is the article</esi-article>
             <span>TTL: 30s</span>
         </div>
-        <pre>
-            This is the whole KV store
-        </pre>
+        <div class="code">
+            <pre>This is the whole KV store</pre>
+        </div>
     </main>
 </body>
 </html>
