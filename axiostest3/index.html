@@ -4,68 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Axios Caching Test</title>
+    <title>Document</title>
 </head>
 <body>
-    <style>
-        body, html { margin: 0; padding: 0; }
-        main {
-            display: grid;
-            grid-template-columns: 20vw 80vw;
-            grid-template-rows: 20vh 50vh 30vh;
-            grid-template-areas: 'header header'
-                                 'sidebar article'
-                                 'sidebar code';
-            height: 100vh;
-            width: 100vw;
-        }
-        main > div {
-            margin: 20px;
-            padding: 20px;
-            background: #ddd;
-            position: relative;
-        }
-        main > div > span {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-        }
-        .sidebar {
-            grid-area: sidebar;
-        }
+Hello, worker! This is a test page.
 
-        .header {
-            grid-area: header;
-        }
-        .article {
-            grid-area: article;
-        }
+<parse-tag>this is a custom parsable tag</parse-tag>
 
-        .code {
-            grid-area: code;
-            font-family: 'Courier New', Courier, monospace;
-        }
+<esi-tag>this is another tag</esi-tag>
 
-    </style>
-    <main>
-        <div class="header">
-            <esi-header>This is the header</esi-header>
-            <span>TTL: 20s</span>
-        </div>
-        <div class="sidebar">
-            <esi-sidebar>This is the sidebar</esi-sidebar>
-            <span>TTL: 10s</span>
-        </div>
-        <div class="article">
-            <esi-article>This is the article</esi-article>
-            <span>TTL: 30s</span>
-        </div>
-        <div class="code">
-            <esi-code>This is the whole KV store</esi-code>
-            <span>Latest KV cached content</span>
-        </div>
-    </main>
 </body>
 </html>
