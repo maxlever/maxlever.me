@@ -298,7 +298,7 @@ html, body {
 [class^="col-"] {
     margin-bottom: 0;
     @include media-query($on-laptop) {
-        margin-bottom: 15px;
+        margin-bottom: 115px;
     }
 }
 @media screen and (min-width: $on-palm) {

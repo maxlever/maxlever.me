@@ -1,5 +1,5 @@
 # Site settings
-baseurl: /
+baseurl: ""
 title: Max Lever
 email: maxdavidlever@gmail.com
 description: 
@@ -12,7 +12,6 @@ description-fr: |
   <p>J'ai obtenu ma licence en 2018 en informatique, design et éthique de l'université Northeastern à Boston. J'ai également suivi des cours à Sciences Po Paris.</p>
   <p>Ce qui m'intéresse, c'est l'effet des nouvelles technologies sur notre société. J'espère intégrer un esprit critique et une compréhension humaine dans les technologies que je crée.</p>
   <p>Si vous avez un projet en tête, n'hésitez pas à prendre contact à l'adresse maxdavidlever[arobase]gmail.com.</p>
-baseurl: ""
 url: "https://maxlever.me"
 linkedin_username: maxlever
 github_username:  maxlever

@@ -27,18 +27,18 @@ lang: fr
     <style type="text/css">
 
     {% for post in site.posts %}
-    {% if post.lang == "fr" %}
-        {% assign title = post.title | replace:' ','' %}
-        .{{ title }}:before {
-            content: "{{ post.title }}";
-            text-decoration: none !important;
-            border-bottom: none;
-        }
-        .{{ title }}:after {
-            content: "{{ post.info }}";
-            text-decoration: none !important;
-        }
-    {% endif %}
+        {% if post.lang == "fr" %}
+            {% assign title = post.title | replace:' ','' %}
+            .{{ title }}:before {
+                content: "{{ post.title }}";
+                text-decoration: none !important;
+                border-bottom: none;
+            }
+            .{{ title }}:after {
+                content: "{{ post.info }}";
+                text-decoration: none !important;
+            }
+        {% endif %}
     {% endfor %}
     </style>
 
